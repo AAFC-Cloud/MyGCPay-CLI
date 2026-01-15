@@ -103,7 +103,7 @@ impl ClientExt for reqwest::Client {
             Ok(rtn) => return Ok(rtn),
             Err(e) => {
                 eyre::bail!(
-                    "Failed to parse cached response: {}\nCheck the cache for details: {}",
+                    "Failed to parse response: {}\nCheck the cache for details: {}",
                     e,
                     request_cache_dir.display()
                 );

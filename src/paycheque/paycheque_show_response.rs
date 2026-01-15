@@ -6,6 +6,7 @@ use facet::Facet;
 pub struct PaychequeShowResponse {
     pub full_name: String,
     pub pri: String,
+    #[facet(rename = "single_paycheque")]
     pub single_paycheque: PaychequeListResponseEntry,
     pub earning_balances: Vec<EarningBalance>,
     pub tax_balances: Vec<TaxBalance>,
@@ -153,6 +154,13 @@ pub struct PaychequeEarning {
     pub original_paygroup: String,
     pub flsa_status: String,
     pub xref_number: String,
+    #[facet(flatten)] // https://github.com/facet-rs/facet/issues/1791
+    pub more: PaychequeEarningMore,
+}
+
+#[derive(Facet)]
+#[facet(rename_all = "camelCase")]
+pub struct PaychequeEarningMore {
     pub union_code: String,
     pub benefit_deduction_status: String,
     pub general_deduction_status: String,
@@ -195,30 +203,30 @@ pub struct PaychequeOtherEarning {
     pub regular_earning_hours: String,
     pub regular_earnings: String,
     pub other_earnings: String,
-    pub add_to_gross: String,
-    pub tax_method: String,
+    pub add_to_gross: Option<String>,
+    pub tax_method: Option<String>,
     pub additional_pay_line_number: String,
     pub seperate_check_number: String,
     pub additional_pay_sequence_number: String,
-    pub time_and_labor_source: String,
-    pub compensation_rate_code: String,
+    pub time_and_labor_source: Option<String>,
+    pub compensation_rate_code: Option<String>,
     pub compensation_rate: String,
     pub compensation_rate_regular_used: String,
-    pub hours_distribution: String,
+    pub hours_distribution: Option<String>,
     pub xref_number: String,
-    pub expense_document_id: String,
-    pub expense_document_type: String,
+    pub expense_document_id: Option<String>,
+    pub expense_document_type: Option<String>,
     pub expense_line_number: String,
-    pub currency_code: String,
-    pub variable_compensation_plan: String,
-    pub payout_period_id: String,
-    pub group_id: String,
-    pub applicant_id: String,
-    pub award_date: String,
+    pub currency_code: Option<String>,
+    pub variable_compensation_plan: Option<String>,
+    pub payout_period_id: Option<String>,
+    pub group_id: Option<String>,
+    pub applicant_id: Option<String>,
+    pub award_date: Option<String>,
     pub e_recruit_status: String,
-    pub sim_sequence_number: String,
-    pub paysheet_update_source: String,
-    pub retro_pay_sequence_number: String,
+    pub sim_sequence_number: Option<String>,
+    pub paysheet_update_source: Option<String>,
+    pub retro_pay_sequence_number: Option<String>,
     pub earnings_end_date: String,
     pub earnings_begin_date: String,
     pub earnings_end_date_unformatted: String,
@@ -229,8 +237,11 @@ pub struct PaychequeOtherEarning {
     pub off_cycle: String,
     pub page_number: String,
     pub line_number: String,
+    #[facet(rename = "emplID")]
     pub empl_id: String,
+    #[facet(rename = "recordID")]
     pub record_id: String,
+    #[facet(rename = "subjectCIT")]
     pub subject_cit: String,
 }
 
@@ -244,6 +255,7 @@ pub struct PaychequeTax {
     pub line_number: String,
     pub seperate_check_number: String,
     pub paycheck_number: String,
+    #[facet(rename = "emplID")]
     pub empl_id: String,
     pub empl_record: String,
     pub province: String,
@@ -285,5 +297,6 @@ pub struct PaychequeDeduction {
     pub reason_not_taken: String,
     pub calculated_base: String,
     pub ap_status: String,
+    #[facet(rename = "emplID")]
     pub empl_id: String,
 }
