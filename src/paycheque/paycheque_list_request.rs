@@ -1,6 +1,7 @@
 use crate::net::CacheKey;
 use crate::net::ClientExt;
 use crate::net::HasCacheKey;
+use crate::net::MaybeCached;
 use crate::net::create_client;
 use crate::paycheque::PaychequeListResponse;
 use std::path::PathBuf;
@@ -15,7 +16,7 @@ impl HasCacheKey for PaychequeListRequest {
 }
 
 impl IntoFuture for PaychequeListRequest {
-    type Output = eyre::Result<PaychequeListResponse>;
+    type Output = eyre::Result<MaybeCached<PaychequeListResponse>>;
     type IntoFuture = Pin<Box<dyn Future<Output = Self::Output>>>;
 
     fn into_future(self) -> Self::IntoFuture {

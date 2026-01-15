@@ -6,8 +6,10 @@ use facet::Facet;
 pub struct PaychequeShowResponse {
     pub full_name: String,
     pub pri: String,
+
     #[facet(rename = "single_paycheque")]
     pub single_paycheque: PaychequeListResponseEntry,
+
     pub earning_balances: Vec<EarningBalance>,
     pub tax_balances: Vec<TaxBalance>,
     pub deduction_balances: Vec<DeductionBalance>,
@@ -90,103 +92,190 @@ pub struct DeductionBalance {
 }
 
 #[derive(Facet)]
-#[facet(rename_all = "camelCase")]
 pub struct PaychequeEarning {
+    #[facet(rename = "recordId")]
     pub record_id: String,
+    #[facet(rename = "earningsBeginDate")]
     pub earnings_begin_date: String,
+    #[facet(rename = "earningsEndDate")]
     pub earnings_end_date: String,
+    #[facet(rename = "earningsBeginDateNumber")]
     pub earnings_begin_date_number: String,
+    #[facet(rename = "earningsBeginDateUnformatted")]
     pub earnings_begin_date_unformatted: String,
+    #[facet(rename = "earningsEndDateUnformatted")]
     pub earnings_end_date_unformatted: String,
+    #[facet(rename = "okToPay")]
     pub ok_to_pay: String,
+    #[facet(rename = "earningCodeRegularHours")]
     pub earning_code_regular_hours: String,
+    #[facet(rename = "earningCodeOvertimeHours")]
     pub earning_code_overtime_hours: String,
+    #[facet(rename = "regularPayHours")]
     pub regular_pay_hours: String,
+    #[facet(rename = "regularHours")]
     pub regular_hours: String,
+    #[facet(rename = "overtimeHours")]
     pub overtime_hours: String,
+    #[facet(rename = "regularHourlyEarnings")]
     pub regular_hourly_earnings: String,
+    #[facet(rename = "overtimeHourlyEarnings")]
     pub overtime_hourly_earnings: String,
+    #[facet(rename = "earningCode")]
     pub earning_code: String,
+    #[facet(rename = "regularPay")]
     pub regular_pay: String,
+    #[facet(rename = "regularEarnings")]
     pub regular_earnings: String,
+    #[facet(rename = "regularEarningHours")]
     pub regular_earning_hours: String,
+    #[facet(rename = "deductionTaken")]
     pub deduction_taken: String,
+    #[facet(rename = "deductionSubsetId")]
     pub deduction_subset_id: String,
+    #[facet(rename = "seperateCheckNumber")]
     pub seperate_check_number: String,
+    #[facet(rename = "benefitRecordNumber")]
     pub benefit_record_number: String,
+    #[facet(rename = "additionalPayReason")]
     pub additional_pay_reason: String,
+    #[facet(rename = "disableDirectDeposit")]
     pub disable_direct_deposit: String,
+    #[facet(rename = "grossUp")]
     pub gross_up: String,
+    #[facet(rename = "payLineCalculationStatus")]
     pub pay_line_calculation_status: String,
+    #[facet(rename = "jobPay")]
     pub job_pay: String,
+    #[facet(rename = "singleChequeUse")]
     pub single_cheque_use: String,
+    #[facet(rename = "combinationCode")]
     pub combination_code: String,
+    #[facet(rename = "generalLedgerPayType")]
     pub general_ledger_pay_type: String,
+    #[facet(rename = "departmentId")]
     pub department_id: String,
+    #[facet(rename = "jobCode")]
     pub job_code: String,
+    #[facet(rename = "positionNumber")]
     pub position_number: String,
+    #[facet(rename = "regularShift")]
     pub regular_shift: String,
+    #[facet(rename = "shiftDifferentialRate")]
     pub shift_differential_rate: String,
+    #[facet(rename = "flsaRate")]
     pub flsa_rate: String,
+    #[facet(rename = "rateUsed")]
     pub rate_used: String,
+    #[facet(rename = "rateUsedFormattedEn")]
     pub rate_used_formatted_en: String,
+    #[facet(rename = "rateUsedFormattedFr")]
     pub rate_used_formatted_fr: String,
+    #[facet(rename = "flsaRequired")]
     pub flsa_required: String,
+    #[facet(rename = "generalDeductionTaken")]
     pub general_deduction_taken: String,
+    #[facet(rename = "generalDeductionSubset")]
     pub general_deduction_subset: String,
+    #[facet(rename = "state")]
     pub state: String,
+    #[facet(rename = "locality")]
     pub locality: String,
+    #[facet(rename = "payFrequency")]
     pub pay_frequency: String,
+    #[facet(rename = "taxPeriods")]
     pub tax_periods: String,
+    #[facet(rename = "additionalTaxes")]
     pub additional_taxes: String,
+    #[facet(rename = "overrideHourlyRateIndicator")]
     pub override_hourly_rate_indicator: String,
+    #[facet(rename = "timeAndLaborSource")]
     pub time_and_labor_source: String,
+    #[facet(rename = "paySheetSource")]
     pub pay_sheet_source: String,
+    #[facet(rename = "businessUnit")]
     pub business_unit: String,
+    #[facet(rename = "eiPriorPeriodCorrection")]
     pub ei_prior_period_correction: String,
+    #[facet(rename = "compensationRateRegular")]
     pub compensation_rate_regular: String,
+    #[facet(rename = "compensationRateOvertime")]
     pub compensation_rate_overtime: String,
+    #[facet(rename = "compensationRateRegularUsed")]
     pub compensation_rate_regular_used: String,
+    #[facet(rename = "compensationRateOvertimeUsed")]
     pub compensation_rate_overtime_used: String,
+    #[facet(rename = "ficaStatusEmployee")]
     pub fica_status_employee: String,
+    #[facet(rename = "annualTaxPeriods")]
     pub annual_tax_periods: String,
+    #[facet(rename = "flsaEndDate")]
     pub flsa_end_date: String,
+    #[facet(rename = "originalPaygroup")]
     pub original_paygroup: String,
+    #[facet(rename = "flsaStatus")]
     pub flsa_status: String,
+    #[facet(rename = "xrefNumber")]
     pub xref_number: String,
     #[facet(flatten)] // https://github.com/facet-rs/facet/issues/1791
     pub more: PaychequeEarningMore,
 }
 
 #[derive(Facet)]
-#[facet(rename_all = "camelCase")]
 pub struct PaychequeEarningMore {
+    #[facet(rename = "unionCode")]
     pub union_code: String,
+    #[facet(rename = "benefitDeductionStatus")]
     pub benefit_deduction_status: String,
+    #[facet(rename = "generalDeductionStatus")]
     pub general_deduction_status: String,
+    #[facet(rename = "contractNumber")]
     pub contract_number: String,
+    #[facet(rename = "contractSequence")]
     pub contract_sequence: String,
+    #[facet(rename = "payGroup")]
     pub pay_group: String,
+    #[facet(rename = "payPeriodEndDate")]
     pub pay_period_end_date: String,
+    #[facet(rename = "offCycle")]
     pub off_cycle: String,
+    #[facet(rename = "pageNumber")]
     pub page_number: String,
+    #[facet(rename = "lineNumber")]
     pub line_number: String,
+    #[facet(rename = "taxMethod")]
     pub tax_method: String,
+    #[facet(rename = "netClaimAmount")]
     pub net_claim_amount: String,
+    #[facet(rename = "specialLetters")]
     pub special_letters: String,
+    #[facet(rename = "additionalAmount")]
     pub additional_amount: String,
+    #[facet(rename = "additionalPercentage")]
     pub additional_percentage: String,
+    #[facet(rename = "QITNetClaim")]
     pub qit_net_claim: String,
+    #[facet(rename = "QITSpecialLetters")]
     pub qit_special_letters: String,
+    #[facet(rename = "QITAdditionalPercentage")]
     pub qit_additional_percentage: String,
+    #[facet(rename = "QITAdditionalAmount")]
     pub qit_additional_amount: String,
+    #[facet(rename = "CITClaimAmount")]
     pub cit_claim_amount: String,
+    #[facet(rename = "subjectCIT")]
     pub subject_cit: String,
+    #[facet(rename = "OTsubjectCIT")]
     pub o_tsubject_cit: String,
+    #[facet(rename = "OTearningCodeEn")]
     pub o_tearning_code_en: String,
+    #[facet(rename = "OTearningCodeFr")]
     pub o_tearning_code_fr: String,
+    #[facet(rename = "earningCodeEn")]
     pub earning_code_en: String,
+    #[facet(rename = "earningCodeFr")]
     pub earning_code_fr: String,
+    #[facet(rename = "AddToGross")]
     pub add_to_gross: String,
 }
 

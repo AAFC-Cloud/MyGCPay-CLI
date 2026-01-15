@@ -1,4 +1,5 @@
 use crate::net::CacheKey;
+use crate::net::MaybeCached;
 use crate::net::NetCacheEntry;
 use crate::paths::CACHE_DIR;
 use chrono::Local;
@@ -13,14 +14,15 @@ pub trait ClientExt {
         &self,
         req: Request,
         cache_key: &CacheKey,
-    ) -> eyre::Result<T>;
+    ) -> eyre::Result<MaybeCached<T>>;
 }
+
 impl ClientExt for reqwest::Client {
     async fn execute_cached<T: Facet<'static>>(
         &self,
         req: Request,
         cache_key: &CacheKey,
-    ) -> eyre::Result<T> {
+    ) -> eyre::Result<MaybeCached<T>> {
         let request_cache_dir = CACHE_DIR.join(cache_key);
         let url = req.url().to_string();
 
@@ -36,7 +38,7 @@ impl ClientExt for reqwest::Client {
                 if cache_entry.matches(&req) {
                     // Parse and return the response
                     match facet_json::from_str(&cache_entry.body) {
-                        Ok(rtn) => return Ok(rtn),
+                        Ok(rtn) => return Ok(MaybeCached::FromCache(rtn)),
                         Err(e) => {
                             eyre::bail!(
                                 "Failed to parse cached response: {}\nCheck the cache for details: {}",
@@ -87,9 +89,11 @@ impl ClientExt for reqwest::Client {
             );
         } else {
             // Write entry to failure dir for inspection
+            let fail_dir = request_cache_dir.join("failures");
+            tokio::fs::create_dir_all(&fail_dir).await?;
             let dir = tempfile::Builder::new()
                 .prefix(Local::now().format("%Y%m%d_%H%M%S").to_string().as_str())
-                .tempdir_in(&request_cache_dir.join("failures"))?
+                .tempdir_in(&fail_dir)?
                 .keep();
             cache_entry.write_to_dir(&dir).await?;
             info!(
@@ -100,10 +104,10 @@ impl ClientExt for reqwest::Client {
 
         // Parse and return the response
         match facet_json::from_str(&body) {
-            Ok(rtn) => return Ok(rtn),
+            Ok(rtn) => return Ok(MaybeCached::FromNetwork(rtn)),
             Err(e) => {
                 eyre::bail!(
-                    "Failed to parse response: {}\nCheck the cache for details: {}",
+                    "Failed to parse response: {}\nCheck the cache for details: {}\nHave you updated your cookie recently?\nRun `mgcp cookie set --help` for more info.",
                     e,
                     request_cache_dir.display()
                 );

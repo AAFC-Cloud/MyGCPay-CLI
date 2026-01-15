@@ -17,7 +17,7 @@ impl PaychequeShowArgs {
         }
         .await?;
 
-        println!("{}", facet_json::to_string_pretty(&resp)?);
+        println!("{}", facet_json::to_string_pretty(resp.as_ref())?);
 
         Ok(())
     }

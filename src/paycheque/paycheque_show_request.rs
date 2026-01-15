@@ -1,6 +1,7 @@
 use crate::net::CacheKey;
 use crate::net::ClientExt;
 use crate::net::HasCacheKey;
+use crate::net::MaybeCached;
 use crate::net::create_client;
 use crate::paycheque::ChequeNumber;
 use crate::paycheque::PaychequeShowResponse;
@@ -22,7 +23,7 @@ impl HasCacheKey for PaychequeShowRequest {
 }
 
 impl IntoFuture for PaychequeShowRequest {
-    type Output = eyre::Result<PaychequeShowResponse>;
+    type Output = eyre::Result<MaybeCached<PaychequeShowResponse>>;
     type IntoFuture = Pin<Box<dyn Future<Output = Self::Output>>>;
 
     fn into_future(self) -> Self::IntoFuture {
