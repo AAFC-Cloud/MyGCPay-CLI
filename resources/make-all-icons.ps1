@@ -1,1 +1,1 @@
-.\make-icon -Source ".\main.png" -Output ".\main.ico"
+.\make-icon -Source "..\logo.png" -Output ".\main.ico"
