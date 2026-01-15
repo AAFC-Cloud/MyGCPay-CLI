@@ -47,10 +47,7 @@ impl ToArgs for CookieArgs {
 
 #[derive(Subcommand, Debug, PartialEq, Arbitrary)]
 pub enum CookieCommand {
-    /// Set cookie
     Set(set::CookieSetArgs),
-    /// Clear cookie
     Clear(clear::CookieClearArgs),
-    /// Check cookie
     Check(check::CookieCheckArgs),
 }

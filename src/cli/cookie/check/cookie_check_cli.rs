@@ -5,6 +5,7 @@ use arbitrary::Arbitrary;
 use clap::Args;
 use color_eyre::owo_colors::OwoColorize;
 
+/// Check cookie
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct CookieCheckArgs {}
 impl CookieCheckArgs {

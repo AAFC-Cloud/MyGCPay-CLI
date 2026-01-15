@@ -6,6 +6,19 @@ use clap::Args;
 use eyre::ensure;
 use tokio::io::AsyncReadExt;
 
+/// Set cookie.
+///
+/// 1. Visit <https://mapayegc-mygcpay.tpsgc-pwgsc.gc.ca/en/mygcpay/>
+///
+/// 2. Open network tab in developer tools
+///
+/// 3. Refresh the page
+///
+/// 4. Identify a request to `paycheque-data/`
+///
+/// 5. Right click the request and select "Copy > Copy request headers"
+///
+/// 6. `Get-Clipboard | mgcp cookie set` (PowerShell)
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct CookieSetArgs {
     /// Cookie value to set. If omitted, reads from stdin.

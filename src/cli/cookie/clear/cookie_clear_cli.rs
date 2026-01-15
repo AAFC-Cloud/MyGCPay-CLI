@@ -4,6 +4,7 @@ use crate::paths::CACHE_DIR;
 use arbitrary::Arbitrary;
 use clap::Args;
 
+/// Clear cookie
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct CookieClearArgs {}
 impl CookieClearArgs {
