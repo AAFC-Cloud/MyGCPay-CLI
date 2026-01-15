@@ -4,7 +4,8 @@
 pub mod cli;
 pub mod logging;
 pub mod paths;
-pub mod cookie;
+pub mod paycheque;
+pub mod net;
 
 use crate::cli::Cli;
 use clap::CommandFactory;

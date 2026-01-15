@@ -2,7 +2,7 @@ use crate::cli::ToArgs;
 use arbitrary::Arbitrary;
 use clap::Args;
 use color_eyre::owo_colors::OwoColorize;
-use crate::cookie::MyGcPayCookie;
+use crate::net::MyGcPayCookie;
 use crate::paths::CACHE_DIR;
 
 #[derive(Args, Debug, PartialEq, Arbitrary)]

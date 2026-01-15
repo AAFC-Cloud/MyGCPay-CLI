@@ -1,6 +1,8 @@
 use crate::cli::ToArgs;
+use crate::paycheque::PaychequeListRequest;
 use arbitrary::Arbitrary;
 use clap::Args;
+use eyre::ensure;
 
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct PaychequeListArgs {
@@ -10,7 +12,12 @@ pub struct PaychequeListArgs {
 }
 impl PaychequeListArgs {
     pub async fn invoke(self) -> eyre::Result<()> {
-        println!("stub: paycheque list --all={} ", self.all);
+        ensure!(!self.all, "--all is not implemented yet");
+
+        let resp = PaychequeListRequest.await?;
+
+        println!("{}", facet_json::to_string_pretty(&resp)?);
+
         Ok(())
     }
 }

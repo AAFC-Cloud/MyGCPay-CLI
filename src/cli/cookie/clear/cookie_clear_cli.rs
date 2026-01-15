@@ -1,7 +1,7 @@
 use crate::cli::ToArgs;
 use arbitrary::Arbitrary;
 use clap::Args;
-use crate::cookie::MyGcPayCookie;
+use crate::net::MyGcPayCookie;
 use crate::paths::CACHE_DIR;
 
 #[derive(Args, Debug, PartialEq, Arbitrary)]

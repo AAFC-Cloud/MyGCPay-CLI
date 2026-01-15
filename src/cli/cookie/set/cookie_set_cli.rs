@@ -1,5 +1,5 @@
 use crate::cli::ToArgs;
-use crate::cookie::MyGcPayCookie;
+use crate::net::MyGcPayCookie;
 use crate::paths::CACHE_DIR;
 use arbitrary::Arbitrary;
 use clap::Args;
