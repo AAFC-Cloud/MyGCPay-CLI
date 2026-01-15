@@ -1,4 +1,10 @@
-pub mod cookie;
+mod cache_entry;
+mod cache_key;
 mod client;
-pub use cookie::*;
+pub mod cookie;
+mod execute_cached;
+pub use cache_entry::*;
+pub use cache_key::*;
 pub use client::*;
+pub use cookie::*;
+pub use execute_cached::*;

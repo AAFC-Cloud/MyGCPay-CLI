@@ -1101,6 +1101,7 @@ dependencies = [
  "eyre",
  "facet",
  "facet-json",
+ "http",
  "reqwest",
  "teamy-windows",
  "tempfile",

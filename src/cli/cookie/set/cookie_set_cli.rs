@@ -20,7 +20,10 @@ impl CookieSetArgs {
             let mut s = String::new();
             tokio::io::stdin().read_to_string(&mut s).await?;
             let s = s.trim().to_string();
-            ensure!(!s.is_empty(), "cookie should be provided as argument or via stdin");
+            ensure!(
+                !s.is_empty(),
+                "cookie should be provided as argument or via stdin"
+            );
             s
         };
 

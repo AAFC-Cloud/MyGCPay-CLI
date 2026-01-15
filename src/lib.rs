@@ -3,9 +3,9 @@
 
 pub mod cli;
 pub mod logging;
+pub mod net;
 pub mod paths;
 pub mod paycheque;
-pub mod net;
 
 use crate::cli::Cli;
 use clap::CommandFactory;

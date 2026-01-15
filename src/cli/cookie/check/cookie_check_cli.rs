@@ -1,9 +1,9 @@
 use crate::cli::ToArgs;
+use crate::net::MyGcPayCookie;
+use crate::paths::CACHE_DIR;
 use arbitrary::Arbitrary;
 use clap::Args;
 use color_eyre::owo_colors::OwoColorize;
-use crate::net::MyGcPayCookie;
-use crate::paths::CACHE_DIR;
 
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct CookieCheckArgs {}

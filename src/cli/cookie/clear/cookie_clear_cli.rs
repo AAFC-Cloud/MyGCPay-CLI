@@ -1,8 +1,8 @@
 use crate::cli::ToArgs;
-use arbitrary::Arbitrary;
-use clap::Args;
 use crate::net::MyGcPayCookie;
 use crate::paths::CACHE_DIR;
+use arbitrary::Arbitrary;
+use clap::Args;
 
 #[derive(Args, Debug, PartialEq, Arbitrary)]
 pub struct CookieClearArgs {}
