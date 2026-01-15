@@ -7,6 +7,9 @@ use arbitrary::Arbitrary;
 use clap::Args;
 use eyre::ensure;
 use facet::Facet;
+use std::io::IsTerminal;
+use std::io::Write;
+use std::io::stdout;
 use std::time::Duration;
 use std::time::Instant;
 use tracing::info;
@@ -16,12 +19,40 @@ pub struct PaychequeListArgs {
     /// Show all paycheques (including archived)
     #[arg(long)]
     pub all: bool,
+
     /// Sleep duration between requests (e.g., "500ms", "1s")
     #[arg(long, value_parser = humantime::parse_duration, default_value = "500ms")]
     pub sleep: Duration,
+
+    /// Print the shape of the response without fetching details
+    #[arg(long, default_value_t = false)]
+    pub shape: bool,
 }
+
+#[derive(Facet)]
+pub struct AllRtn {
+    pub paycheques: Vec<PaychequeListResponseEntry>,
+    pub paycheque_details: Vec<PaychequeShowResponse>,
+}
+
 impl PaychequeListArgs {
     pub async fn invoke(self) -> eyre::Result<()> {
+        if self.shape {
+            let shape = if self.all {
+                AllRtn::SHAPE
+            } else {
+                PaychequeListResponseEntry::SHAPE
+            };
+            let mut stdout = stdout().lock();
+            let display = if stdout.is_terminal() {
+                facet_pretty::format_shape_colored(shape)
+            } else {
+                facet_pretty::format_shape(shape)
+            };
+            writeln!(stdout, "{}", display)?;
+            return Ok(());
+        }
+
         // Fetch all paycheques
         let resp = PaychequeListRequest.await?;
         info!(count=%resp.len(), "Fetched {} paycheques", resp.len());
@@ -31,12 +62,7 @@ impl PaychequeListArgs {
         }
         resp.respectful_sleep(self.sleep).await;
 
-        #[derive(Facet)]
-        pub struct Rtn {
-            pub paycheques: Vec<PaychequeListResponseEntry>,
-            pub paycheque_details: Vec<PaychequeShowResponse>,
-        }
-        let mut rtn = Rtn {
+        let mut rtn = AllRtn {
             paycheques: resp.take(),
             paycheque_details: Vec::new(),
         };
