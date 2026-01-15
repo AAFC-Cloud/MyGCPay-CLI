@@ -1,5 +1,7 @@
 use facet::Facet;
 
+use crate::paycheque::ChequeNumber;
+
 pub type PaychequeListResponse = Vec<PaychequeListResponseEntry>;
 
 #[derive(Facet)]
@@ -7,7 +9,7 @@ pub type PaychequeListResponse = Vec<PaychequeListResponseEntry>;
 pub struct PaychequeListResponseEntry {
     department_name: String,
     cheque_type: String,
-    cheque_no: String,
+    cheque_no: ChequeNumber,
     cheque_pay_group: String,
     cheque_issued_date_number: String,
     cheque_issued_date: String,

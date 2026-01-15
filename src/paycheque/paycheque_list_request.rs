@@ -3,13 +3,14 @@ use crate::net::ClientExt;
 use crate::net::HasCacheKey;
 use crate::net::create_client;
 use crate::paycheque::PaychequeListResponse;
+use std::path::PathBuf;
 use std::pin::Pin;
 
 pub struct PaychequeListRequest;
 
 impl HasCacheKey for PaychequeListRequest {
     fn cache_key(&self) -> CacheKey {
-        CacheKey::new("paycheque_list")
+        CacheKey::new(PathBuf::from_iter(["paycheque", "list"]))
     }
 }
 

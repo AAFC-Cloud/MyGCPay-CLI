@@ -1,4 +1,6 @@
 use crate::cli::ToArgs;
+use crate::paycheque::ChequeNumber;
+use crate::paycheque::PaychequeShowRequest;
 use arbitrary::Arbitrary;
 use clap::Args;
 
@@ -6,11 +8,17 @@ use clap::Args;
 pub struct PaychequeShowArgs {
     /// ID of paycheque to show
     #[arg(value_name = "ID")]
-    pub id: Option<String>,
+    pub id: String,
 }
 impl PaychequeShowArgs {
     pub async fn invoke(self) -> eyre::Result<()> {
-        println!("stub: paycheque show {:?}", self.id);
+        let resp = PaychequeShowRequest {
+            cheque_number: ChequeNumber(self.id),
+        }
+        .await?;
+
+        println!("{}", facet_json::to_string_pretty(&resp)?);
+
         Ok(())
     }
 }

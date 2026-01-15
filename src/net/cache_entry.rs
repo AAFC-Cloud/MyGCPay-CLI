@@ -19,7 +19,7 @@ impl<'a> NetCacheEntry<'a> {
         let status_path = dir.as_ref().join("status.txt");
         tokio::fs::write(status_path, self.status.as_u16().to_string()).await?;
 
-        let body_path = dir.as_ref().join("body.txt");
+        let body_path = dir.as_ref().join("body.json");
         tokio::fs::write(body_path, self.body.as_bytes()).await?;
         Ok(())
     }
@@ -31,7 +31,7 @@ impl<'a> NetCacheEntry<'a> {
         let status_str = tokio::fs::read_to_string(status_path).await?;
         let status_code: u16 = status_str.trim().parse()?;
 
-        let body_path = dir.as_ref().join("body.txt");
+        let body_path = dir.as_ref().join("body.json");
         let status = StatusCode::from_u16(status_code)?;
 
         let body = tokio::fs::read_to_string(body_path).await?;
