@@ -1,6 +1,7 @@
 use std::ops::Deref;
 use std::ops::DerefMut;
 use std::time::Duration;
+use tracing::debug;
 
 pub enum MaybeCached<T> {
     FromCache(T),
@@ -11,9 +12,10 @@ impl<T> MaybeCached<T> {
         matches!(self, MaybeCached::FromCache(_))
     }
     pub fn respectful_sleep(&self, delay: Duration) -> impl Future<Output = ()> + 'static {
-        let should_sleep = !self.was_cached();
+        let was_cached = self.was_cached();
         async move {
-            if should_sleep {
+            debug!(delay_ms = delay.as_millis(), was_cached, "Respectful sleep iff not cached");
+            if !was_cached {
                 tokio::time::sleep(delay).await;
             }
         }

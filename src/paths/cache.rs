@@ -45,6 +45,11 @@ impl std::ops::Deref for CacheHome {
         self.0.as_path()
     }
 }
+impl AsRef<Path> for CacheHome {
+    fn as_ref(&self) -> &Path {
+        self.0.as_path()
+    }
+}
 
 /// Clean the entire API response cache directory.
 ///

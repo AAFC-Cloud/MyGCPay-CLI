@@ -2,6 +2,7 @@ use facet::Facet;
 use std::ops::Deref;
 
 #[derive(Facet, Clone, Eq, PartialEq, Ord, PartialOrd, Hash)]
+#[facet(transparent)]
 pub struct ChequeNumber(pub String);
 impl Deref for ChequeNumber {
     type Target = str;

@@ -69,6 +69,8 @@ impl PaychequeListArgs {
             rtn.paycheque_details.push(details.take());
         }
 
+        println!("{}", facet_json::to_string_pretty(&rtn)?);
+
         Ok(())
     }
 }

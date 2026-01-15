@@ -27,13 +27,13 @@ pub fn main() -> eyre::Result<()> {
     // Initialize logging
     logging::init_logging(&cli.global_args.logging_config()?)?;
 
-    // Enable ANSI support on Windows
     #[cfg(windows)]
-    teamy_windows::console::enable_ansi_support()?;
-
-    // Warn if UTF-8 is not enabled on Windows
-    #[cfg(windows)]
-    teamy_windows::string::warn_if_utf8_not_enabled();
+    {
+        // Enable ANSI support on Windows
+        _ = teamy_windows::console::enable_ansi_support();
+        // Warn if UTF-8 is not enabled on Windows
+        teamy_windows::string::warn_if_utf8_not_enabled();
+    }
 
     // Invoke whatever command was requested
     cli.invoke()?;

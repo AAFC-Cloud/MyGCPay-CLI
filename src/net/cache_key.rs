@@ -9,6 +9,9 @@ impl CacheKey {
     pub fn new(path: impl Into<PathBuf>) -> Self {
         CacheKey(path.into())
     }
+    pub fn join(&self, path: impl AsRef<Path>) -> Self {
+        CacheKey(self.0.join(path))
+    }
 }
 impl AsRef<Path> for CacheKey {
     fn as_ref(&self) -> &Path {
