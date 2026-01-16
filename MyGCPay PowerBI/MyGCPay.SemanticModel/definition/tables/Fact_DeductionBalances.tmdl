@@ -1,0 +1,393 @@
+table Fact_DeductionBalances
+	lineageTag: 01ac2889-63bc-409e-9838-4224ffe1c4db
+
+	column fullName
+		dataType: string
+		lineageTag: 48a4f5a3-1b39-48a5-b5ea-b83473fe386d
+		summarizeBy: none
+		sourceColumn: fullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pri
+		dataType: int64
+		formatString: 0
+		lineageTag: 150c785b-2562-48f6-a6c0-46c0d67d61c2
+		summarizeBy: sum
+		sourceColumn: pri
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.departmentName'
+		dataType: string
+		lineageTag: 7bb1e535-00d4-427d-b126-37d25ff1b814
+		summarizeBy: none
+		sourceColumn: single_paycheque.departmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeType'
+		dataType: string
+		lineageTag: 875c374f-bd52-46fa-a09f-2e8c2639322a
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeNo'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5976944d-d4eb-4544-83c3-774696b9f594
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequePayGroup'
+		dataType: string
+		lineageTag: 1032097d-9a72-4231-ac53-136fb219f092
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequePayGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeIssuedDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5ec2097b-41ef-41d8-9079-e8b16cda7609
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeIssuedDate
+
+		variation Variation
+			isDefault
+			relationship: 7fba0c66-5ef4-4c29-998c-22bf301aa61e
+			defaultHierarchy: LocalDateTable_abc5b8b3-4b89-4cec-9e71-2aa6cc836cfd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeMonth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 160a7a59-3e46-4f1f-872c-f515bfb071af
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeMonth
+
+		variation Variation
+			isDefault
+			relationship: a7a7b4c0-03b0-45e7-a40b-04584fc626ba
+			defaultHierarchy: LocalDateTable_e8e77654-a3df-475d-ab4c-b762b199e1f3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeStartDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5c55b441-088f-4f70-a87e-c537952205ce
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeStartDate
+
+		variation Variation
+			isDefault
+			relationship: 2d554ab2-72da-43df-b7bf-4818df953759
+			defaultHierarchy: LocalDateTable_0ba6fc3e-b160-46d8-af72-eb4c5915217a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: def5dd7e-7d34-463d-83d3-1da2f15904eb
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeEndDate
+
+		variation Variation
+			isDefault
+			relationship: 5b25d1bf-e710-42c1-bfb0-aa81465590af
+			defaultHierarchy: LocalDateTable_acdb111c-d180-4e0e-8dd3-6ffbcf524690.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeTotalGross'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 9e76c741-d759-4e91-a8e6-5f8404605916
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalGross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalTax'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cde0cf6d-a7e7-4424-8a23-0f1a3b4999c7
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalDeduction'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 586f34a0-e09f-491c-87a0-bcebbf32c8f4
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalDeduction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalNet'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 910eb41a-92a5-4830-a524-30f485c2e014
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalNet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeAccountNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e10dbd8-082e-4a88-957e-6786e55d21e0
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.paycheckOption'
+		dataType: string
+		lineageTag: 1511c995-a3cb-4c01-9cf2-8166877c476f
+		summarizeBy: none
+		sourceColumn: single_paycheque.paycheckOption
+
+		annotation SummarizationSetBy = Automatic
+
+	column earningBalances
+		dataType: string
+		lineageTag: e0c3a960-aca0-4e5e-9bc5-162833e32b5b
+		summarizeBy: none
+		sourceColumn: earningBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxBalances
+		dataType: string
+		lineageTag: 752bc721-f86a-4708-b793-1f12dea6119c
+		summarizeBy: none
+		sourceColumn: taxBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.balanceId'
+		dataType: string
+		lineageTag: a8720318-d8e1-40ab-a92c-89f089d38df9
+		summarizeBy: none
+		sourceColumn: deductionBalances.balanceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.balanceYear'
+		dataType: int64
+		formatString: 0
+		lineageTag: ee9888cb-a6a2-42d5-8ad9-9f871f61d23a
+		summarizeBy: sum
+		sourceColumn: deductionBalances.balanceYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.wageLossReplacementPlan'
+		dataType: string
+		lineageTag: 32502f74-52ec-4640-873b-c5ce30f30ba2
+		summarizeBy: none
+		sourceColumn: deductionBalances.wageLossReplacementPlan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.province'
+		dataType: string
+		lineageTag: 0f4123a5-e87e-4191-a857-163fba3ed8a7
+		summarizeBy: none
+		sourceColumn: deductionBalances.province
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.balanceQuarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: af97c5f4-fade-4d86-b9d4-0fdb8ee8c004
+		summarizeBy: sum
+		sourceColumn: deductionBalances.balanceQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.balancePeriod'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1007f691-e0d9-4685-97f7-0d86c0f2e94c
+		summarizeBy: sum
+		sourceColumn: deductionBalances.balancePeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.benefitRecordNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b7b37a9-c78e-4990-9c36-afebec6d57d0
+		summarizeBy: sum
+		sourceColumn: deductionBalances.benefitRecordNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.planType'
+		dataType: int64
+		formatString: 0
+		lineageTag: 19b49ed7-7f57-42ec-813e-93318a39c5d0
+		summarizeBy: sum
+		sourceColumn: deductionBalances.planType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.benefitPlan'
+		dataType: string
+		lineageTag: a57ce59e-4504-4f02-a8b7-19b9e4f4525c
+		summarizeBy: none
+		sourceColumn: deductionBalances.benefitPlan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionCode'
+		dataType: string
+		lineageTag: 5c5cc837-531b-4162-a9d5-7ec1427db28c
+		summarizeBy: none
+		sourceColumn: deductionBalances.deductionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionCodeEn'
+		dataType: string
+		lineageTag: 5fd96ad9-7504-4afb-9f39-4f662dec2bd0
+		summarizeBy: none
+		sourceColumn: deductionBalances.deductionCodeEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionCodeFr'
+		dataType: string
+		lineageTag: def0d2cb-192d-49e1-b7ec-3f982613e3ed
+		summarizeBy: none
+		sourceColumn: deductionBalances.deductionCodeFr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionClassification'
+		dataType: string
+		lineageTag: 306b73c9-21f9-42f3-baf8-32aa88e27949
+		summarizeBy: none
+		sourceColumn: deductionBalances.deductionClassification
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.salesTaxType'
+		dataType: string
+		lineageTag: bd4b3df5-25e0-4634-a2cd-dbdfa865d3b4
+		summarizeBy: none
+		sourceColumn: deductionBalances.salesTaxType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.company'
+		dataType: string
+		lineageTag: 3be81a4d-fed5-4c6d-bdd9-973bc13ddaa9
+		summarizeBy: none
+		sourceColumn: deductionBalances.company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionBalanceYearToDate'
+		dataType: int64
+		formatString: 0
+		lineageTag: f79b77c7-0aa4-45ac-9242-363c946e46e3
+		summarizeBy: sum
+		sourceColumn: deductionBalances.deductionBalanceYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionBalanceQuarterToDate'
+		dataType: int64
+		formatString: 0
+		lineageTag: eb6e90ec-ab84-4eff-9801-4df5f8fdcd71
+		summarizeBy: sum
+		sourceColumn: deductionBalances.deductionBalanceQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deductionBalances.deductionBalanceMonthToDate'
+		dataType: int64
+		formatString: 0
+		lineageTag: f322eebe-dbd4-41c0-b674-ec4f5ed41c05
+		summarizeBy: sum
+		sourceColumn: deductionBalances.deductionBalanceMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeEarnings
+		dataType: string
+		lineageTag: 97ecc1fe-504b-4143-93eb-8c0d8e7cd158
+		summarizeBy: none
+		sourceColumn: paychequeEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeOtherEarnings
+		dataType: string
+		lineageTag: 1c882ff9-dfbc-4576-ba17-e0e1c3b6dcfd
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeTaxes
+		dataType: string
+		lineageTag: 3f278eea-c305-4453-8e95-77099b9668a9
+		summarizeBy: none
+		sourceColumn: paychequeTaxes
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeDeductions
+		dataType: string
+		lineageTag: c7c226af-db94-4ea7-b8b3-4298ef4b0460
+		summarizeBy: none
+		sourceColumn: paychequeDeductions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_DeductionBalances = m
+		mode: import
+		source =
+				let
+				    Source = SinglePaycheque,
+				    #"Expanded deductionBalances" = Table.ExpandListColumn(Source, "deductionBalances"),
+				    #"Expanded deductionBalances1" = Table.ExpandRecordColumn(#"Expanded deductionBalances", "deductionBalances", {"balanceId", "balanceYear", "wageLossReplacementPlan", "province", "balanceQuarter", "balancePeriod", "benefitRecordNumber", "planType", "benefitPlan", "deductionCode", "deductionCodeEn", "deductionCodeFr", "deductionClassification", "salesTaxType", "company", "deductionBalanceYearToDate", "deductionBalanceQuarterToDate", "deductionBalanceMonthToDate"}, {"deductionBalances.balanceId", "deductionBalances.balanceYear", "deductionBalances.wageLossReplacementPlan", "deductionBalances.province", "deductionBalances.balanceQuarter", "deductionBalances.balancePeriod", "deductionBalances.benefitRecordNumber", "deductionBalances.planType", "deductionBalances.benefitPlan", "deductionBalances.deductionCode", "deductionBalances.deductionCodeEn", "deductionBalances.deductionCodeFr", "deductionBalances.deductionClassification", "deductionBalances.salesTaxType", "deductionBalances.company", "deductionBalances.deductionBalanceYearToDate", "deductionBalances.deductionBalanceQuarterToDate", "deductionBalances.deductionBalanceMonthToDate"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded deductionBalances1",{{"deductionBalances.balanceYear", Int64.Type}, {"deductionBalances.balanceQuarter", Int64.Type}, {"deductionBalances.balancePeriod", Int64.Type}, {"deductionBalances.benefitRecordNumber", Int64.Type}, {"deductionBalances.planType", Int64.Type}, {"deductionBalances.deductionBalanceYearToDate", Int64.Type}, {"deductionBalances.deductionBalanceQuarterToDate", Int64.Type}, {"deductionBalances.deductionBalanceMonthToDate", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

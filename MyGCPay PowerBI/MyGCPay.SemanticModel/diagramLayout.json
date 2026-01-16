@@ -1,0 +1,138 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1764.2788943771041,
+            "y": 100.13111051805964
+          },
+          "nodeIndex": "AllRtn",
+          "nodeLineageTag": "9e73315d-280f-43cf-a0df-d20a95640ec5",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 578.19120491773674,
+            "y": 834.74023561555123
+          },
+          "nodeIndex": "Fact_DeductionBalances",
+          "nodeLineageTag": "01ac2889-63bc-409e-9838-4224ffe1c4db",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 303.68109246635845
+          },
+          "nodeIndex": "Fact_EarningBalances",
+          "nodeLineageTag": "dc617a7c-7bd4-4124-aef9-166711749e6f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 313.63514370050279,
+            "y": -50
+          },
+          "nodeIndex": "Fact_PaychequeDeductions",
+          "nodeLineageTag": "00d47bd5-1c39-453a-8821-6aec1edd2288",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 728.83569732905687,
+            "y": 63.129170836681396
+          },
+          "nodeIndex": "Fact_PaychequeEarnings",
+          "nodeLineageTag": "bc9a1fb4-c4a5-4cc2-83c1-04308a941914",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1298.0108866294249,
+            "y": 406.75814875154521
+          },
+          "nodeIndex": "Fact_PaychequeOtherEarnings",
+          "nodeLineageTag": "e63a35ea-bd72-46db-914d-1edecc107ad7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 290.93182444357313,
+            "y": 656.04953339012116
+          },
+          "nodeIndex": "Fact_PaychequeTaxes",
+          "nodeLineageTag": "aa4c617c-852a-4997-96ed-ed49a7fd2ba8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 922.44708534576932,
+            "y": 828.36393593894752
+          },
+          "nodeIndex": "Fact_TaxBalances",
+          "nodeLineageTag": "aea75069-20fd-4776-8219-9fe25dba4813",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 577.9773497252902,
+            "y": 416.8878041323627
+          },
+          "nodeIndex": "SinglePaycheque",
+          "size": {
+            "height": 300,
+            "width": 409.98290403224189
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 79.553182037699813,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

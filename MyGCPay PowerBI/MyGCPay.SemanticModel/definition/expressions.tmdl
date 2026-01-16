@@ -1,0 +1,9 @@
+/// You can shift right click your file and "Copy as path".
+/// You can leave the quotes at the beginning and end after pasting as they will be stripped out automatically.
+expression PaychequesJsonFilePath = """paycheques.json""" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f3259195-fb38-479c-9f79-3b7a98b941a9
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

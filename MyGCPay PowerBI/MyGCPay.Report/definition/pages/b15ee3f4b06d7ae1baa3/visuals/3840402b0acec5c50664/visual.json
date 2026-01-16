@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "3840402b0acec5c50664",
+  "position": {
+    "x": 634.80843911716568,
+    "y": 229.7194922376045,
+    "z": 1000,
+    "height": 123.19341855013491,
+    "width": 644.95377946835333,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PaychequeEarnings"
+                    }
+                  },
+                  "Property": "paychequeEarnings.earningCodeEn"
+                }
+              },
+              "queryRef": "Fact_PaychequeEarnings.paychequeEarnings.earningCodeEn",
+              "nativeQueryRef": "paychequeEarnings.earningCodeEn",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_PaychequeEarnings"
+                        }
+                      },
+                      "Property": "paychequeEarnings.regularEarnings"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_PaychequeEarnings.paychequeEarnings.regularEarnings)",
+              "nativeQueryRef": "Sum of paychequeEarnings.regularEarnings"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_PaychequeEarnings"
+                      }
+                    },
+                    "Property": "paychequeEarnings.regularEarnings"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Category, data value, percent of total'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Earnings by class'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "15041d4892e04e1a102a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PaychequeEarnings"
+              }
+            },
+            "Property": "paychequeEarnings.earningCodeEn"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c3b2209982e25e17856e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_PaychequeEarnings"
+                  }
+                },
+                "Property": "paychequeEarnings.regularEarnings"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MyGCPay"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b8d7d75-5eef-445d-9734-258de43ab34d"
+  }
+}

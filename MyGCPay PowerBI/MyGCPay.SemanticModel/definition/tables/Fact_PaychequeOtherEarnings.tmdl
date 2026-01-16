@@ -1,0 +1,672 @@
+table Fact_PaychequeOtherEarnings
+	lineageTag: e63a35ea-bd72-46db-914d-1edecc107ad7
+
+	column fullName
+		dataType: string
+		lineageTag: 53b5bbbd-8678-4ba4-b843-389a4ea698cc
+		summarizeBy: none
+		sourceColumn: fullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pri
+		dataType: int64
+		formatString: 0
+		lineageTag: 46949372-233c-4cd1-9de2-280fa21f8fa4
+		summarizeBy: sum
+		sourceColumn: pri
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.departmentName'
+		dataType: string
+		lineageTag: 10697cf0-56ff-4d97-9e88-6cdc8f70ddc6
+		summarizeBy: none
+		sourceColumn: single_paycheque.departmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeType'
+		dataType: string
+		lineageTag: 80c143b8-2dcc-4fe5-9530-ec2386fcea6d
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeNo'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a134419-08a6-4244-8637-32f33a93ddcc
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequePayGroup'
+		dataType: string
+		lineageTag: 850400f7-20ff-4f0f-907a-b77610eea767
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequePayGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeIssuedDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2e49c4bf-2983-4168-a642-4be12d1cdcf7
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeIssuedDate
+
+		variation Variation
+			isDefault
+			relationship: 23debf20-c3c4-4b9c-a95b-17db89040825
+			defaultHierarchy: LocalDateTable_35c44d7e-8885-4bb1-bb13-1078a3429b4d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeMonth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 10e38b53-9678-4fe5-9477-481f7680a8a8
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeMonth
+
+		variation Variation
+			isDefault
+			relationship: 80be03dd-37a1-457e-ba65-be1f985a140d
+			defaultHierarchy: LocalDateTable_8dd55724-c43a-4642-9e00-1514ae0605f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeStartDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 619d6687-79bc-46e5-ab2f-95bfe51243cb
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeStartDate
+
+		variation Variation
+			isDefault
+			relationship: 30ece6e2-3d0b-492b-b120-b19b636ccbb3
+			defaultHierarchy: LocalDateTable_5281fabc-c8c4-4bf2-a237-ac6e1109dc87.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ce9d8926-789c-4788-aed1-affac60a8042
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeEndDate
+
+		variation Variation
+			isDefault
+			relationship: 6701d079-a430-4909-82cd-b0ce506b3f20
+			defaultHierarchy: LocalDateTable_c85c62f5-a1c7-4eb6-976b-0fe8661324ac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeTotalGross'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 5e9a78ee-7edb-4178-ba62-9b202ee1b816
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalGross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalTax'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 23d73d7e-c4d7-4df6-94ae-3ff9544d0d0f
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalDeduction'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 260e8643-b874-4804-8091-09785e58ddd1
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalDeduction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalNet'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d59dbd81-2b3a-4d1c-80dc-f08fad4596b1
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalNet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeAccountNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f3a4d60-e106-4655-9595-eea93fd59a18
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.paycheckOption'
+		dataType: string
+		lineageTag: 3527f803-d19b-4988-b343-40c463272f10
+		summarizeBy: none
+		sourceColumn: single_paycheque.paycheckOption
+
+		annotation SummarizationSetBy = Automatic
+
+	column earningBalances
+		dataType: string
+		lineageTag: c7e2e24e-5190-462e-a2b0-50b436b6d85c
+		summarizeBy: none
+		sourceColumn: earningBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxBalances
+		dataType: string
+		lineageTag: f52f13ac-8101-4e8c-8cbc-c3300a4ef92c
+		summarizeBy: none
+		sourceColumn: taxBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column deductionBalances
+		dataType: string
+		lineageTag: bf76633e-3def-4cc4-931f-7004374ab32f
+		summarizeBy: none
+		sourceColumn: deductionBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeEarnings
+		dataType: string
+		lineageTag: f4e573b9-d6ea-4dcd-9cba-270acdaf296e
+		summarizeBy: none
+		sourceColumn: paychequeEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.earningCode'
+		dataType: string
+		lineageTag: 1fac11c9-fdc3-4456-b2dc-61c9f8fca305
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.earningCodeEn'
+		dataType: string
+		lineageTag: 68414c88-7808-4de2-a292-9c1113980f58
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningCodeEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.earningCodeFr'
+		dataType: string
+		lineageTag: f2c8875a-0e7a-42b2-bce3-e08a3e0f51da
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningCodeFr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.rateUsed'
+		dataType: string
+		lineageTag: 4efe42e8-b530-4dde-a9a7-b6fda0c2baae
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.rateUsed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.rateUsedFormattedEn'
+		dataType: string
+		lineageTag: abea2f76-0619-4e98-9483-b49b2304f5bb
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.rateUsedFormattedEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.rateUsedFormattedFr'
+		dataType: string
+		lineageTag: 5d9fa860-5e95-43e9-838d-04dbd4762090
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.rateUsedFormattedFr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.jobPay'
+		dataType: string
+		lineageTag: 2175f1a2-9c9f-4827-b356-18df955af447
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.jobPay
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.regularEarningHours'
+		dataType: double
+		lineageTag: dd7e3047-bc66-47a3-8fd9-d48ba0c8e551
+		summarizeBy: sum
+		sourceColumn: paychequeOtherEarnings.regularEarningHours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'paychequeOtherEarnings.regularEarnings'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 80f4f0d1-1a60-4ac7-b5e3-f9ae57851fd4
+		summarizeBy: sum
+		sourceColumn: paychequeOtherEarnings.regularEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'paychequeOtherEarnings.otherEarnings'
+		dataType: string
+		lineageTag: d2304e74-b90f-4cfb-a153-fbf719f92865
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.otherEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.addToGross'
+		dataType: string
+		lineageTag: e0a57577-f603-4802-856b-43e92437db01
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.addToGross
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.taxMethod'
+		dataType: string
+		lineageTag: 17af46f9-3c8f-46a9-813c-478078d18421
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.taxMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.additionalPayLineNumber'
+		dataType: string
+		lineageTag: 3e68c530-0509-4548-bcba-193ec41cc600
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.additionalPayLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.seperateCheckNumber'
+		dataType: string
+		lineageTag: e5b5e7ad-9f1b-4ac9-8b80-1651b941b39f
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.seperateCheckNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.additionalPaySequenceNumber'
+		dataType: string
+		lineageTag: 146a7dce-3c82-4309-a3e3-fa8a6a234c30
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.additionalPaySequenceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.timeAndLaborSource'
+		dataType: string
+		lineageTag: a6725ce8-86b6-4d3d-b522-60466c91aa5a
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.timeAndLaborSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.compensationRateCode'
+		dataType: string
+		lineageTag: 125b0596-bdc5-4b97-9ac3-643199ab93ba
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.compensationRateCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.compensationRate'
+		dataType: string
+		lineageTag: 4105b75d-c0fb-49ae-8f09-764426b63170
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.compensationRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.compensationRateRegularUsed'
+		dataType: double
+		lineageTag: 1db44aa1-1823-4ed8-bbcb-aa84520f4585
+		summarizeBy: sum
+		sourceColumn: paychequeOtherEarnings.compensationRateRegularUsed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'paychequeOtherEarnings.hoursDistribution'
+		dataType: string
+		lineageTag: a8fc713a-7742-4224-9f9e-76a4ea368e86
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.hoursDistribution
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.xrefNumber'
+		dataType: string
+		lineageTag: 1115ef84-6eeb-4e5e-a810-19e683bd8fc3
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.xrefNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.expenseDocumentId'
+		dataType: string
+		lineageTag: 07af754c-02fe-4e17-91ff-ccefd1707fc5
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.expenseDocumentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.expenseDocumentType'
+		dataType: string
+		lineageTag: 76ea719f-2da8-429b-8502-a46874af5899
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.expenseDocumentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.expenseLineNumber'
+		dataType: string
+		lineageTag: 4a0c4734-4d28-4bef-b862-986662e83731
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.expenseLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.currencyCode'
+		dataType: string
+		lineageTag: 116172a5-6f42-47a1-826b-360972d8a112
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.currencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.variableCompensationPlan'
+		dataType: string
+		lineageTag: 70ea5760-9dac-4adf-be3f-7b379f0e3644
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.variableCompensationPlan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.payoutPeriodId'
+		dataType: string
+		lineageTag: d45767ad-4067-4867-920c-68e8069ab6b7
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.payoutPeriodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.groupId'
+		dataType: string
+		lineageTag: 73e3d005-4c9e-4574-9cae-7a23d20807a0
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.groupId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.applicantId'
+		dataType: string
+		lineageTag: 19bf2147-0b02-459d-a0dd-30a671043f61
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.applicantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.awardDate'
+		dataType: string
+		lineageTag: 5bd922ae-c89e-4e98-81bf-810a700de501
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.awardDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.eRecruitStatus'
+		dataType: string
+		lineageTag: a93bc6ba-5e61-40f4-a936-96e03054b549
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.eRecruitStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.simSequenceNumber'
+		dataType: string
+		lineageTag: db84abc1-901c-4f0f-a4c9-95ead9d93199
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.simSequenceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.paysheetUpdateSource'
+		dataType: string
+		lineageTag: 62203b42-ff47-4e18-b002-35c56a739658
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.paysheetUpdateSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.retroPaySequenceNumber'
+		dataType: string
+		lineageTag: 0ec3c99b-203b-47a9-864a-2fe142ff06b0
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.retroPaySequenceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.earningsEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c00a20a9-5d48-44da-a9b2-822dc55ca636
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningsEndDate
+
+		variation Variation
+			isDefault
+			relationship: ec5e6160-96f3-48e4-b3be-9591cf074d6c
+			defaultHierarchy: LocalDateTable_1cd730ff-64fe-4bde-bf58-e0273c48df18.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.earningsBeginDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1e58aa4a-b918-4843-9ab8-4c0cf4b162da
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningsBeginDate
+
+		variation Variation
+			isDefault
+			relationship: 76529c58-5e72-4687-9936-cf03e54914cd
+			defaultHierarchy: LocalDateTable_eb03ca2d-984f-4662-834e-3837bc53687e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.earningsEndDateUnformatted'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c75cb2b9-7186-478a-bbe5-6f7799003097
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningsEndDateUnformatted
+
+		variation Variation
+			isDefault
+			relationship: 50298342-34ff-4ac1-93d1-23b5dc7416c3
+			defaultHierarchy: LocalDateTable_f4a3b503-f145-49fd-8a53-832f4ac1727f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.earningsBeginDateUnformatted'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 33e19ff5-3328-4bc5-9985-27dae8be938d
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningsBeginDateUnformatted
+
+		variation Variation
+			isDefault
+			relationship: ff0155d4-959a-422a-b99e-c88dd6ad8d75
+			defaultHierarchy: LocalDateTable_7e622515-0738-40ed-a03f-b19978490129.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.earningsBeginDateNumber'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 920e71c3-c845-4c01-9b74-e538adfd3197
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.earningsBeginDateNumber
+
+		variation Variation
+			isDefault
+			relationship: 7787aebf-c482-4724-8fd3-0500e4063e23
+			defaultHierarchy: LocalDateTable_12c637a5-0b1b-47c0-a408-3a43a7f9d782.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.payGroup'
+		dataType: string
+		lineageTag: ede7ac47-4a8d-4616-9094-d2e6903d8063
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.payGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.payPeriodEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a893583c-b325-43be-a1dc-55eabbfe8e6c
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.payPeriodEndDate
+
+		variation Variation
+			isDefault
+			relationship: ba310f66-e573-4f72-a2bf-7c027879339e
+			defaultHierarchy: LocalDateTable_ae655ee2-1329-4706-a731-b67506f5c7e6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'paychequeOtherEarnings.offCycle'
+		dataType: string
+		lineageTag: 54ae8e56-2bc6-48e0-ba25-6533a214d5ba
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.offCycle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.pageNumber'
+		dataType: string
+		lineageTag: e80cdcdf-67aa-4eb3-a14b-fc49fb489f4d
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.pageNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.lineNumber'
+		dataType: string
+		lineageTag: ed8a9767-b0ec-45b5-9469-1af24820025d
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.lineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.emplID'
+		dataType: string
+		lineageTag: 444bd0e8-5552-4740-ac5f-f57afa1308d4
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.emplID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.recordID'
+		dataType: string
+		lineageTag: 2769a18a-59fc-499f-8dbb-0d6648513186
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.recordID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'paychequeOtherEarnings.subjectCIT'
+		dataType: string
+		lineageTag: 5ca2bc35-0d49-4cef-8c4e-4e0458e1a2af
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings.subjectCIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeTaxes
+		dataType: string
+		lineageTag: 33c5b8bc-c6b9-4fa5-a53d-232e491056b4
+		summarizeBy: none
+		sourceColumn: paychequeTaxes
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeDeductions
+		dataType: string
+		lineageTag: d3f8056c-dd4e-414f-a632-11b7ba2127d7
+		summarizeBy: none
+		sourceColumn: paychequeDeductions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_PaychequeOtherEarnings = m
+		mode: import
+		source =
+				let
+				    Source = SinglePaycheque,
+				    #"Expanded paychequeOtherEarnings" = Table.ExpandListColumn(Source, "paychequeOtherEarnings"),
+				    #"Expanded paychequeOtherEarnings1" = Table.ExpandRecordColumn(#"Expanded paychequeOtherEarnings", "paychequeOtherEarnings", {"earningCode", "earningCodeEn", "earningCodeFr", "rateUsed", "rateUsedFormattedEn", "rateUsedFormattedFr", "jobPay", "regularEarningHours", "regularEarnings", "otherEarnings", "addToGross", "taxMethod", "additionalPayLineNumber", "seperateCheckNumber", "additionalPaySequenceNumber", "timeAndLaborSource", "compensationRateCode", "compensationRate", "compensationRateRegularUsed", "hoursDistribution", "xrefNumber", "expenseDocumentId", "expenseDocumentType", "expenseLineNumber", "currencyCode", "variableCompensationPlan", "payoutPeriodId", "groupId", "applicantId", "awardDate", "eRecruitStatus", "simSequenceNumber", "paysheetUpdateSource", "retroPaySequenceNumber", "earningsEndDate", "earningsBeginDate", "earningsEndDateUnformatted", "earningsBeginDateUnformatted", "earningsBeginDateNumber", "payGroup", "payPeriodEndDate", "offCycle", "pageNumber", "lineNumber", "emplID", "recordID", "subjectCIT"}, {"paychequeOtherEarnings.earningCode", "paychequeOtherEarnings.earningCodeEn", "paychequeOtherEarnings.earningCodeFr", "paychequeOtherEarnings.rateUsed", "paychequeOtherEarnings.rateUsedFormattedEn", "paychequeOtherEarnings.rateUsedFormattedFr", "paychequeOtherEarnings.jobPay", "paychequeOtherEarnings.regularEarningHours", "paychequeOtherEarnings.regularEarnings", "paychequeOtherEarnings.otherEarnings", "paychequeOtherEarnings.addToGross", "paychequeOtherEarnings.taxMethod", "paychequeOtherEarnings.additionalPayLineNumber", "paychequeOtherEarnings.seperateCheckNumber", "paychequeOtherEarnings.additionalPaySequenceNumber", "paychequeOtherEarnings.timeAndLaborSource", "paychequeOtherEarnings.compensationRateCode", "paychequeOtherEarnings.compensationRate", "paychequeOtherEarnings.compensationRateRegularUsed", "paychequeOtherEarnings.hoursDistribution", "paychequeOtherEarnings.xrefNumber", "paychequeOtherEarnings.expenseDocumentId", "paychequeOtherEarnings.expenseDocumentType", "paychequeOtherEarnings.expenseLineNumber", "paychequeOtherEarnings.currencyCode", "paychequeOtherEarnings.variableCompensationPlan", "paychequeOtherEarnings.payoutPeriodId", "paychequeOtherEarnings.groupId", "paychequeOtherEarnings.applicantId", "paychequeOtherEarnings.awardDate", "paychequeOtherEarnings.eRecruitStatus", "paychequeOtherEarnings.simSequenceNumber", "paychequeOtherEarnings.paysheetUpdateSource", "paychequeOtherEarnings.retroPaySequenceNumber", "paychequeOtherEarnings.earningsEndDate", "paychequeOtherEarnings.earningsBeginDate", "paychequeOtherEarnings.earningsEndDateUnformatted", "paychequeOtherEarnings.earningsBeginDateUnformatted", "paychequeOtherEarnings.earningsBeginDateNumber", "paychequeOtherEarnings.payGroup", "paychequeOtherEarnings.payPeriodEndDate", "paychequeOtherEarnings.offCycle", "paychequeOtherEarnings.pageNumber", "paychequeOtherEarnings.lineNumber", "paychequeOtherEarnings.emplID", "paychequeOtherEarnings.recordID", "paychequeOtherEarnings.subjectCIT"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded paychequeOtherEarnings1",{{"paychequeOtherEarnings.regularEarningHours", type number}, {"paychequeOtherEarnings.regularEarnings", Currency.Type}, {"paychequeOtherEarnings.compensationRateRegularUsed", type number}, {"paychequeOtherEarnings.earningsEndDate", type date}, {"paychequeOtherEarnings.earningsBeginDate", type date}, {"paychequeOtherEarnings.earningsEndDateUnformatted", type date}, {"paychequeOtherEarnings.earningsBeginDateUnformatted", type date}, {"paychequeOtherEarnings.earningsBeginDateNumber", type date}, {"paychequeOtherEarnings.payPeriodEndDate", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

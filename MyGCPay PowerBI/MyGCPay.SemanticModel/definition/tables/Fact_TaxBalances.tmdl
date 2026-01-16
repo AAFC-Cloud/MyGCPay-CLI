@@ -1,0 +1,423 @@
+table Fact_TaxBalances
+	lineageTag: aea75069-20fd-4776-8219-9fe25dba4813
+
+	column fullName
+		dataType: string
+		lineageTag: 903bbfed-6eb5-43a4-a201-d63be66f5ef8
+		summarizeBy: none
+		sourceColumn: fullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pri
+		dataType: int64
+		formatString: 0
+		lineageTag: 93e04ff0-f2f6-40f3-8052-f5ffdeb72ed1
+		summarizeBy: sum
+		sourceColumn: pri
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.departmentName'
+		dataType: string
+		lineageTag: 5a49f2b9-b891-4c50-8c7b-22617776e387
+		summarizeBy: none
+		sourceColumn: single_paycheque.departmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeType'
+		dataType: string
+		lineageTag: 533a2e09-3f00-496d-8c68-4036f66eca10
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeNo'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13b2779a-8356-44d9-af77-b4505c1cbad8
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequePayGroup'
+		dataType: string
+		lineageTag: 1df422d5-1140-4496-a747-3a77a1440648
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequePayGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeIssuedDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fa5c5d78-9e70-455d-b4e6-00737e02c5e1
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeIssuedDate
+
+		variation Variation
+			isDefault
+			relationship: 91e19a93-0e61-41e5-b35b-fd5e7603ee4a
+			defaultHierarchy: LocalDateTable_bc836f01-c6ac-419f-af30-c2d756c2dab0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeMonth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ffcdb7f-cb4c-4162-844b-a93c9b696144
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeMonth
+
+		variation Variation
+			isDefault
+			relationship: 2d587000-d97e-4c3b-9474-245730f8bad1
+			defaultHierarchy: LocalDateTable_75de2321-cce7-409a-b765-44fa15f27750.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeStartDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2a6aa2a4-57ed-416b-b214-d253336b037f
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeStartDate
+
+		variation Variation
+			isDefault
+			relationship: a05d9e56-9e1a-494b-8741-e6b6a13d4dbc
+			defaultHierarchy: LocalDateTable_18ce8332-a6da-4616-b4e0-e711a5bdf1e2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c495e9a1-a66c-4e56-a769-1f5b8102f614
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeEndDate
+
+		variation Variation
+			isDefault
+			relationship: b30af307-8e47-48fe-83d1-99390475dad5
+			defaultHierarchy: LocalDateTable_102bef7f-6cb3-460f-8490-f8bc02cce494.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeTotalGross'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ff9c9b1e-18c6-4952-a172-f9bf9726707d
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalGross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalTax'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d60a0575-6b22-40c5-b423-7ca89706e1e1
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalDeduction'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6eb6449d-9c65-4538-847f-1c348a943a77
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalDeduction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalNet'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6e1063d6-2148-4a9f-a8dc-0f0d2eb1adf5
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalNet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeAccountNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 68d6fed0-43ea-4135-8710-3e294942a973
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.paycheckOption'
+		dataType: string
+		lineageTag: 5ec13559-aba6-40e3-969e-1257c7f95ec7
+		summarizeBy: none
+		sourceColumn: single_paycheque.paycheckOption
+
+		annotation SummarizationSetBy = Automatic
+
+	column earningBalances
+		dataType: string
+		lineageTag: fde24771-d109-4534-8126-3f31bfaf2d24
+		summarizeBy: none
+		sourceColumn: earningBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.company'
+		dataType: string
+		lineageTag: c9e693e7-93d7-4c96-8036-e253567127ad
+		summarizeBy: none
+		sourceColumn: taxBalances.company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.balanceId'
+		dataType: string
+		lineageTag: 556fc164-35e8-4511-9091-f70cb15bc268
+		summarizeBy: none
+		sourceColumn: taxBalances.balanceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.balanceYear'
+		dataType: int64
+		formatString: 0
+		lineageTag: af1f193b-e591-4f63-a029-00133d1542ae
+		summarizeBy: sum
+		sourceColumn: taxBalances.balanceYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.wageLossPlan'
+		dataType: string
+		lineageTag: 3b16fa2f-bde6-4d65-8e4e-e3acca3d43f1
+		summarizeBy: none
+		sourceColumn: taxBalances.wageLossPlan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.province'
+		dataType: string
+		lineageTag: 4609dbbc-a19e-4071-9599-5ed348243bca
+		summarizeBy: none
+		sourceColumn: taxBalances.province
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.balanceQuarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: 045c2768-11bd-4302-9797-5d72e15d5799
+		summarizeBy: sum
+		sourceColumn: taxBalances.balanceQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.balancePeriod'
+		dataType: int64
+		formatString: 0
+		lineageTag: 44f40272-05d3-48ed-9569-e742a3e62427
+		summarizeBy: sum
+		sourceColumn: taxBalances.balancePeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.canadianTaxClass'
+		dataType: string
+		lineageTag: aadf51a6-a218-426e-ab51-4864709ea550
+		summarizeBy: none
+		sourceColumn: taxBalances.canadianTaxClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.canadianTaxClassEn'
+		dataType: string
+		lineageTag: aed001fe-b18b-4b9b-a4df-e5dce70564f9
+		summarizeBy: none
+		sourceColumn: taxBalances.canadianTaxClassEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.canadianTaxClassFr'
+		dataType: string
+		lineageTag: 048eb68a-7b9b-44cc-bc93-2a5fd4e5ec8a
+		summarizeBy: none
+		sourceColumn: taxBalances.canadianTaxClassFr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'taxBalances.noLimitGrossYearToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a45e68e1-6ce1-4e19-a188-f22293b2c3bb
+		summarizeBy: sum
+		sourceColumn: taxBalances.noLimitGrossYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.noLimitGrossQuarterToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b5b54c08-6617-4403-9194-4b3ec9b43e80
+		summarizeBy: sum
+		sourceColumn: taxBalances.noLimitGrossQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.noLimitGrossMonthToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a2ddedb0-7a99-4ec1-9751-4ccae0742a0a
+		summarizeBy: sum
+		sourceColumn: taxBalances.noLimitGrossMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxableGrossYearToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d5795cab-68b6-4504-860f-3f79a04a6b3f
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxableGrossYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxableGrossQuarterToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 5e433998-f0f3-4379-9311-630024bbd30d
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxableGrossQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxableGrossMonthToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 46263b2a-bfe8-4d00-b233-d2abd723e42a
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxableGrossMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxYearToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0d728b8d-7082-4c6c-b834-32472faca0a0
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxQuarterToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 29c3764e-dc65-49c9-bfaf-f0295416bc99
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'taxBalances.taxMonthToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 707402c3-ce1f-41e9-bb64-05539b6dbeaa
+		summarizeBy: sum
+		sourceColumn: taxBalances.taxMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column deductionBalances
+		dataType: string
+		lineageTag: 5fd23d9f-d838-4024-a1bd-b9a98a2d2756
+		summarizeBy: none
+		sourceColumn: deductionBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeEarnings
+		dataType: string
+		lineageTag: 5dd0a24f-c5ab-4cd0-aa0b-fef0618d905d
+		summarizeBy: none
+		sourceColumn: paychequeEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeOtherEarnings
+		dataType: string
+		lineageTag: 99be710d-2dc7-4e14-9877-4b53886e4ed4
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeTaxes
+		dataType: string
+		lineageTag: 0f84a37d-92b0-408c-8de3-ba003067bf0b
+		summarizeBy: none
+		sourceColumn: paychequeTaxes
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeDeductions
+		dataType: string
+		lineageTag: 1911856f-1cdc-4b0f-98e8-fdef3036c66a
+		summarizeBy: none
+		sourceColumn: paychequeDeductions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_TaxBalances = m
+		mode: import
+		source =
+				let
+				    Source = SinglePaycheque,
+				    #"Expanded taxBalances" = Table.ExpandListColumn(Source, "taxBalances"),
+				    #"Expanded taxBalances1" = Table.ExpandRecordColumn(#"Expanded taxBalances", "taxBalances", {"company", "balanceId", "balanceYear", "wageLossPlan", "province", "balanceQuarter", "balancePeriod", "canadianTaxClass", "canadianTaxClassEn", "canadianTaxClassFr", "noLimitGrossYearToDate", "noLimitGrossQuarterToDate", "noLimitGrossMonthToDate", "taxableGrossYearToDate", "taxableGrossQuarterToDate", "taxableGrossMonthToDate", "taxYearToDate", "taxQuarterToDate", "taxMonthToDate"}, {"taxBalances.company", "taxBalances.balanceId", "taxBalances.balanceYear", "taxBalances.wageLossPlan", "taxBalances.province", "taxBalances.balanceQuarter", "taxBalances.balancePeriod", "taxBalances.canadianTaxClass", "taxBalances.canadianTaxClassEn", "taxBalances.canadianTaxClassFr", "taxBalances.noLimitGrossYearToDate", "taxBalances.noLimitGrossQuarterToDate", "taxBalances.noLimitGrossMonthToDate", "taxBalances.taxableGrossYearToDate", "taxBalances.taxableGrossQuarterToDate", "taxBalances.taxableGrossMonthToDate", "taxBalances.taxYearToDate", "taxBalances.taxQuarterToDate", "taxBalances.taxMonthToDate"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded taxBalances1",{{"taxBalances.balanceYear", Int64.Type}, {"taxBalances.balanceQuarter", Int64.Type}, {"taxBalances.balancePeriod", Int64.Type}, {"taxBalances.noLimitGrossYearToDate", Currency.Type}, {"taxBalances.noLimitGrossQuarterToDate", Currency.Type}, {"taxBalances.noLimitGrossMonthToDate", Currency.Type}, {"taxBalances.taxableGrossYearToDate", Currency.Type}, {"taxBalances.taxableGrossQuarterToDate", Currency.Type}, {"taxBalances.taxableGrossMonthToDate", Currency.Type}, {"taxBalances.taxYearToDate", Currency.Type}, {"taxBalances.taxQuarterToDate", Currency.Type}, {"taxBalances.taxMonthToDate", Currency.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

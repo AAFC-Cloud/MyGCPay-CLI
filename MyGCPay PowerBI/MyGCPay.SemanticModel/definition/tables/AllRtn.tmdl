@@ -1,0 +1,31 @@
+table AllRtn
+	lineageTag: 9e73315d-280f-43cf-a0df-d20a95640ec5
+
+	column Name
+		dataType: string
+		lineageTag: d57e49cd-9a88-4ed5-87b0-b4b43202fc2d
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: f7f0c644-cb5a-4092-8089-dbdc4db79df6
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AllRtn = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents(Text.Trim(PaychequesJsonFilePath, """")))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Record
+

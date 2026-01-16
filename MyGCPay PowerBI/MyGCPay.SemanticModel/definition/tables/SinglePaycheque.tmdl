@@ -1,0 +1,254 @@
+table SinglePaycheque
+	lineageTag: c5899eaa-db80-49c8-9517-188f4f1acff7
+
+	column fullName
+		dataType: string
+		lineageTag: a2dc98e6-ef30-4141-9526-00e177ea0fca
+		summarizeBy: none
+		sourceColumn: fullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pri
+		dataType: int64
+		formatString: 0
+		lineageTag: 03f022a0-fed1-46de-a5ad-18d24f3e3e6a
+		summarizeBy: sum
+		sourceColumn: pri
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.departmentName'
+		dataType: string
+		lineageTag: b96ed4c5-918f-4336-b7cc-78df8e637a08
+		summarizeBy: none
+		sourceColumn: single_paycheque.departmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeType'
+		dataType: string
+		lineageTag: 83e6ddcb-5b6b-44b0-bd45-e77de0b2038f
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeNo'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7446911c-71b9-4f93-b4cf-f3a254ffd43d
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequePayGroup'
+		dataType: string
+		lineageTag: 480f3f54-11a4-45ed-aec2-36bf631b4011
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequePayGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeIssuedDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2d4a4b03-3e91-49d0-b746-5c7103f1e8da
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeIssuedDate
+
+		variation Variation
+			isDefault
+			relationship: 1e6a520c-d407-4b73-a26b-ff953c2d1a33
+			defaultHierarchy: LocalDateTable_b1b89e78-4f78-4329-8d1c-1e48f55d2ed0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeMonth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 63a348c2-110b-47c6-a177-09f0aa9567c6
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeMonth
+
+		variation Variation
+			isDefault
+			relationship: ff7c40dd-6f16-4df2-b1db-383c035c7e38
+			defaultHierarchy: LocalDateTable_6f548c73-9f3d-420f-96ed-72460ba96d0c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeStartDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1389fe3b-b0d2-475c-9ff7-4a2124a29e05
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeStartDate
+
+		variation Variation
+			isDefault
+			relationship: 4c9692cc-321a-4451-ba5f-091eadd10788
+			defaultHierarchy: LocalDateTable_09764160-78c8-4322-b989-54954aac9387.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f826f5cb-eea2-4349-b304-eacb907c3c1f
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeEndDate
+
+		variation Variation
+			isDefault
+			relationship: fa260f78-1260-4f4b-a313-c6f2afcb216d
+			defaultHierarchy: LocalDateTable_9b6b81fc-88a7-4590-b7d5-caeb88ba8810.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeTotalGross'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ef333f1d-601e-47d5-911c-8655996dbfc8
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalGross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalTax'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1a09928f-8d66-4a15-8622-8f40f8bc5896
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalDeduction'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f652cd71-6262-4dcc-853c-34b825590f09
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalDeduction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalNet'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1b0d0f3d-926b-4d1f-b45e-c8804f2a213a
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalNet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeAccountNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: a44d6d16-5183-4057-b894-61da6f1d495c
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.paycheckOption'
+		dataType: string
+		lineageTag: a3421ded-633e-46f2-a624-ea818b6eb2f1
+		summarizeBy: none
+		sourceColumn: single_paycheque.paycheckOption
+
+		annotation SummarizationSetBy = Automatic
+
+	column earningBalances
+		dataType: string
+		lineageTag: 1f3185b8-2732-41f9-974a-1dea5fac099e
+		summarizeBy: none
+		sourceColumn: earningBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxBalances
+		dataType: string
+		lineageTag: 7fee3e0d-c8e1-44db-98ff-d6c9c5c1e714
+		summarizeBy: none
+		sourceColumn: taxBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column deductionBalances
+		dataType: string
+		lineageTag: 021812a2-5ae1-4de1-a462-f5e14b18d74d
+		summarizeBy: none
+		sourceColumn: deductionBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeEarnings
+		dataType: string
+		lineageTag: a0c9e8b4-4bce-4d95-916a-0b0e76060f85
+		summarizeBy: none
+		sourceColumn: paychequeEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeOtherEarnings
+		dataType: string
+		lineageTag: 50070853-9bd4-41d0-9d1b-6b8789d522b8
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeTaxes
+		dataType: string
+		lineageTag: ba0214f4-06d8-40e5-bead-b451fb92fd15
+		summarizeBy: none
+		sourceColumn: paychequeTaxes
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeDeductions
+		dataType: string
+		lineageTag: 51104d4b-1024-44f3-99fc-f065ce5ced89
+		summarizeBy: none
+		sourceColumn: paychequeDeductions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SinglePaycheque = m
+		mode: import
+		source =
+				let
+				    Source = AllRtn,
+				    paycheque_details = Source[paycheque_details],
+				    #"Converted to Table" = Table.FromList(paycheque_details, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"fullName", "pri", "single_paycheque", "earningBalances", "taxBalances", "deductionBalances", "paychequeEarnings", "paychequeOtherEarnings", "paychequeTaxes", "paychequeDeductions"}, {"fullName", "pri", "single_paycheque", "earningBalances", "taxBalances", "deductionBalances", "paychequeEarnings", "paychequeOtherEarnings", "paychequeTaxes", "paychequeDeductions"}),
+				    #"Expanded single_paycheque" = Table.ExpandRecordColumn(#"Expanded Column1", "single_paycheque", {"departmentName", "chequeType", "chequeNo", "chequePayGroup", "chequeIssuedDateNumber", "chequeIssuedDate", "chequeMonth", "chequeIssuedDateShort", "chequeStartDate", "chequeStartDateUnformatted", "chequeEndDate", "chequeEndDateUnformatted", "chequeTotalGross", "chequeTotalTax", "chequeTotalDeduction", "chequeTotalNet", "chequeTotalGrossFormated", "chequeTotalTaxFormated", "chequeTotalDeductionFormated", "chequeTotalNetFormated", "chequeAccountNumber", "paycheckOption"}, {"single_paycheque.departmentName", "single_paycheque.chequeType", "single_paycheque.chequeNo", "single_paycheque.chequePayGroup", "single_paycheque.chequeIssuedDateNumber", "single_paycheque.chequeIssuedDate", "single_paycheque.chequeMonth", "single_paycheque.chequeIssuedDateShort", "single_paycheque.chequeStartDate", "single_paycheque.chequeStartDateUnformatted", "single_paycheque.chequeEndDate", "single_paycheque.chequeEndDateUnformatted", "single_paycheque.chequeTotalGross", "single_paycheque.chequeTotalTax", "single_paycheque.chequeTotalDeduction", "single_paycheque.chequeTotalNet", "single_paycheque.chequeTotalGrossFormated", "single_paycheque.chequeTotalTaxFormated", "single_paycheque.chequeTotalDeductionFormated", "single_paycheque.chequeTotalNetFormated", "single_paycheque.chequeAccountNumber", "single_paycheque.paycheckOption"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded single_paycheque",{{"pri", Int64.Type}, {"single_paycheque.chequeNo", Int64.Type}, {"single_paycheque.chequeIssuedDateNumber", type date}, {"single_paycheque.chequeIssuedDate", type date}, {"single_paycheque.chequeMonth", type date}, {"single_paycheque.chequeIssuedDateShort", type date}, {"single_paycheque.chequeStartDate", type date}, {"single_paycheque.chequeStartDateUnformatted", type date}, {"single_paycheque.chequeEndDate", type date}, {"single_paycheque.chequeEndDateUnformatted", type date}, {"single_paycheque.chequeTotalGross", Currency.Type}, {"single_paycheque.chequeTotalTax", Currency.Type}, {"single_paycheque.chequeTotalDeduction", Currency.Type}, {"single_paycheque.chequeTotalNet", Currency.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"single_paycheque.chequeTotalGrossFormated", "single_paycheque.chequeTotalTaxFormated", "single_paycheque.chequeTotalDeductionFormated", "single_paycheque.chequeTotalNetFormated"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"single_paycheque.chequeAccountNumber", Int64.Type}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Changed Type1",{"single_paycheque.chequeIssuedDateShort", "single_paycheque.chequeStartDateUnformatted", "single_paycheque.chequeEndDateUnformatted", "single_paycheque.chequeIssuedDateNumber"})
+				in
+				    #"Removed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

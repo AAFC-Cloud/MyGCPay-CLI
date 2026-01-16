@@ -1,0 +1,220 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "3c29efd0edba30a47d14",
+  "position": {
+    "x": 697.85448272811709,
+    "y": 395.66827369631562,
+    "z": 2000,
+    "height": 324.65089123800254,
+    "width": 581.90773585740192,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePaycheque"
+                    }
+                  },
+                  "Property": "single_paycheque.chequeIssuedDate"
+                }
+              },
+              "queryRef": "SinglePaycheque.single_paycheque.chequeIssuedDate",
+              "nativeQueryRef": "issued date",
+              "displayName": "issued date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePaycheque"
+                    }
+                  },
+                  "Property": "single_paycheque.chequeNo"
+                }
+              },
+              "queryRef": "SinglePaycheque.single_paycheque.chequeNo",
+              "nativeQueryRef": "chequeNo",
+              "displayName": "chequeNo"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePaycheque"
+                        }
+                      },
+                      "Property": "single_paycheque.chequeTotalGross"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SinglePaycheque.single_paycheque.chequeTotalGross)",
+              "nativeQueryRef": "totalGross",
+              "displayName": "totalGross"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePaycheque"
+                        }
+                      },
+                      "Property": "single_paycheque.chequeTotalNet"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SinglePaycheque.single_paycheque.chequeTotalNet)",
+              "nativeQueryRef": "totalNet",
+              "displayName": "totalNet"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePaycheque"
+                        }
+                      },
+                      "Property": "single_paycheque.chequeTotalTax"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SinglePaycheque.single_paycheque.chequeTotalTax)",
+              "nativeQueryRef": "totalTax",
+              "displayName": "totalTax"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SinglePaycheque"
+                  }
+                },
+                "Property": "single_paycheque.chequeIssuedDate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33b1c7c5d30167e7ed37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SinglePaycheque"
+              }
+            },
+            "Property": "single_paycheque.chequeIssuedDate"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b415ffcb04c45838036e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SinglePaycheque"
+              }
+            },
+            "Property": "single_paycheque.chequeNo"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8b72521d069e20c78b09",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SinglePaycheque"
+                  }
+                },
+                "Property": "single_paycheque.chequeTotalGross"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2eba13eb7119e020e038",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SinglePaycheque"
+                  }
+                },
+                "Property": "single_paycheque.chequeTotalNet"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "59984a768060003bb2db",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SinglePaycheque"
+                  }
+                },
+                "Property": "single_paycheque.chequeTotalTax"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

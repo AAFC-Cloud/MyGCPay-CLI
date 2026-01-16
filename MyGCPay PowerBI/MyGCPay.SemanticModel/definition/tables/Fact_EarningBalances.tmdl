@@ -1,0 +1,417 @@
+table Fact_EarningBalances
+	lineageTag: dc617a7c-7bd4-4124-aef9-166711749e6f
+
+	column fullName
+		dataType: string
+		lineageTag: 8eb5174b-7dce-4734-9f5c-7d56ca6e8bd0
+		summarizeBy: none
+		sourceColumn: fullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pri
+		dataType: int64
+		formatString: 0
+		lineageTag: eff6d030-5a23-42b9-ac02-538f47ef014e
+		summarizeBy: sum
+		sourceColumn: pri
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.departmentName'
+		dataType: string
+		lineageTag: c3b8a60d-bc67-4bc8-889f-10e03ca310d8
+		summarizeBy: none
+		sourceColumn: single_paycheque.departmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeType'
+		dataType: string
+		lineageTag: fc64bde5-46d5-4582-a7f2-3390c95bcd9d
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeNo'
+		dataType: int64
+		formatString: 0
+		lineageTag: e3d5dbe8-40e2-4e24-ac69-8cfcc025db02
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequePayGroup'
+		dataType: string
+		lineageTag: 911658d5-6f2e-4abc-b358-ed4a89c76a73
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequePayGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.chequeIssuedDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c15717d6-ca59-4595-ab3c-3d26169f19cc
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeIssuedDate
+
+		variation Variation
+			isDefault
+			relationship: 7145b862-c38b-4339-a04e-a599c4c4e7db
+			defaultHierarchy: LocalDateTable_f24b1f2c-5410-477b-978e-641575e5d132.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeMonth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5d179a1f-6151-4241-b504-ff25af86002f
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeMonth
+
+		variation Variation
+			isDefault
+			relationship: 1ef7a862-3766-4117-aef5-8caf686b1c9a
+			defaultHierarchy: LocalDateTable_220c6efd-7cb3-4756-b36f-e6aecae29408.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeStartDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 759aa7b6-530f-4b35-8d87-f079c96e85c2
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeStartDate
+
+		variation Variation
+			isDefault
+			relationship: ca20ec3d-abc0-4ec8-8018-e929fb027a20
+			defaultHierarchy: LocalDateTable_493b4405-c4ac-41f0-bedc-05ea8b79a6bb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeEndDate'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 77a038e5-56c5-42c2-af1d-609320b5dc67
+		summarizeBy: none
+		sourceColumn: single_paycheque.chequeEndDate
+
+		variation Variation
+			isDefault
+			relationship: b709455a-e1db-4cb7-b274-68c894fc3b94
+			defaultHierarchy: LocalDateTable_bef0aa73-63b4-4a4d-8e24-620afee9f091.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'single_paycheque.chequeTotalGross'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b8ca7393-7d5b-4bd1-b734-af2be6d63120
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalGross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalTax'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2085775a-c0b8-4acd-9958-13a2cdffff33
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalDeduction'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 77a3bf89-7c39-4f33-b0d1-9c091f362dc3
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalDeduction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeTotalNet'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c2c6fab0-8b46-481d-a8b1-d0c1cd028932
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeTotalNet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'single_paycheque.chequeAccountNumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a63c3d4-9a5c-4257-803e-198c39337e4b
+		summarizeBy: sum
+		sourceColumn: single_paycheque.chequeAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'single_paycheque.paycheckOption'
+		dataType: string
+		lineageTag: 672da521-2da5-457b-b7cc-ffe82549fc09
+		summarizeBy: none
+		sourceColumn: single_paycheque.paycheckOption
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.company'
+		dataType: string
+		lineageTag: 3e4180fa-90db-4b15-ab96-4f52cd27399b
+		summarizeBy: none
+		sourceColumn: earningBalances.company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.balanceId'
+		dataType: string
+		lineageTag: b8ad24f2-4d60-4854-bf60-9156be20ec52
+		summarizeBy: none
+		sourceColumn: earningBalances.balanceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.balanceYear'
+		dataType: int64
+		formatString: 0
+		lineageTag: 945ec46a-ed99-4471-96d5-38e373db1ff7
+		summarizeBy: sum
+		sourceColumn: earningBalances.balanceYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.wageLossReplacementPlan'
+		dataType: string
+		lineageTag: aae58534-84e1-48eb-a455-b954d00b878c
+		summarizeBy: none
+		sourceColumn: earningBalances.wageLossReplacementPlan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.province'
+		dataType: string
+		lineageTag: a1331d51-b3eb-450c-b8e2-cf042e1d2874
+		summarizeBy: none
+		sourceColumn: earningBalances.province
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.balanceQuarter'
+		dataType: string
+		lineageTag: 83b1f9ab-8bcd-48f7-a3a8-e212d87fab05
+		summarizeBy: none
+		sourceColumn: earningBalances.balanceQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.balancePeriod'
+		dataType: string
+		lineageTag: 477a561c-508a-4c1c-acc5-56bf55b45f95
+		summarizeBy: none
+		sourceColumn: earningBalances.balancePeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.recordId'
+		dataType: string
+		lineageTag: d135f9b0-8bf6-46bc-9523-a2ef7db8caf4
+		summarizeBy: none
+		sourceColumn: earningBalances.recordId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.specialEarningBalance'
+		dataType: string
+		lineageTag: 45014860-ac00-4954-b205-41b8bf5573ba
+		summarizeBy: none
+		sourceColumn: earningBalances.specialEarningBalance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.earningCode'
+		dataType: string
+		lineageTag: ab3741c6-d249-40c1-90ee-4ce847105304
+		summarizeBy: none
+		sourceColumn: earningBalances.earningCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.earningCodeEn'
+		dataType: string
+		lineageTag: 1caff0cf-db85-49b9-8e29-1fbc06699c01
+		summarizeBy: none
+		sourceColumn: earningBalances.earningCodeEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.earningCodeFr'
+		dataType: string
+		lineageTag: 1833d29b-a259-4576-8735-5aaab8082808
+		summarizeBy: none
+		sourceColumn: earningBalances.earningCodeFr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.hoursYearToDate'
+		dataType: double
+		lineageTag: eb2a7d6f-c5fc-4467-b2bb-7a4ef2438189
+		summarizeBy: sum
+		sourceColumn: earningBalances.hoursYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'earningBalances.hoursQuarterToDate'
+		dataType: double
+		lineageTag: f2e91779-f35b-4a21-8191-b5bfbd512bcb
+		summarizeBy: sum
+		sourceColumn: earningBalances.hoursQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'earningBalances.hoursMonthToDate'
+		dataType: double
+		lineageTag: d50c10c5-90c7-48da-bccf-d356476da8e3
+		summarizeBy: sum
+		sourceColumn: earningBalances.hoursMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'earningBalances.grossEarningYearToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b3fbd592-e0f2-4cc0-8af8-6e21ef430966
+		summarizeBy: sum
+		sourceColumn: earningBalances.grossEarningYearToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'earningBalances.grossEarningQuarterToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 467099e1-4dbe-443c-a837-94c64d24675c
+		summarizeBy: sum
+		sourceColumn: earningBalances.grossEarningQuarterToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'earningBalances.grossEarningMonthToDate'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8b9510e0-069e-4e39-b1c8-713fe9daac16
+		summarizeBy: sum
+		sourceColumn: earningBalances.grossEarningMonthToDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'earningBalances.subjectCIT'
+		dataType: string
+		lineageTag: aedf16dc-59f5-4e9b-8ebf-d2f5ad6d87f4
+		summarizeBy: none
+		sourceColumn: earningBalances.subjectCIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'earningBalances.addToGross'
+		dataType: string
+		lineageTag: 7947fd0f-517a-47b3-87ca-5bc7d195dcbc
+		summarizeBy: none
+		sourceColumn: earningBalances.addToGross
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxBalances
+		dataType: string
+		lineageTag: e9317398-7877-4809-b68c-bba00ffb4a51
+		summarizeBy: none
+		sourceColumn: taxBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column deductionBalances
+		dataType: string
+		lineageTag: 132ee45e-12d8-4e49-8377-2134eb35ac53
+		summarizeBy: none
+		sourceColumn: deductionBalances
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeEarnings
+		dataType: string
+		lineageTag: 1ee417e0-dfbc-4c07-abdb-041ac69c288f
+		summarizeBy: none
+		sourceColumn: paychequeEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeOtherEarnings
+		dataType: string
+		lineageTag: c4ae40a1-fc41-4782-9713-912eecab77de
+		summarizeBy: none
+		sourceColumn: paychequeOtherEarnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeTaxes
+		dataType: string
+		lineageTag: 33cda08e-8091-49ad-a901-9607cba1f5b9
+		summarizeBy: none
+		sourceColumn: paychequeTaxes
+
+		annotation SummarizationSetBy = Automatic
+
+	column paychequeDeductions
+		dataType: string
+		lineageTag: 1b360616-2261-4304-9aef-0c1f1d64cb24
+		summarizeBy: none
+		sourceColumn: paychequeDeductions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_EarningBalances = m
+		mode: import
+		source =
+				let
+				    Source = SinglePaycheque,
+				    #"Expanded earningBalances" = Table.ExpandListColumn(Source, "earningBalances"),
+				    #"Expanded earningBalances1" = Table.ExpandRecordColumn(#"Expanded earningBalances", "earningBalances", {"company", "balanceId", "balanceYear", "wageLossReplacementPlan", "province", "balanceQuarter", "balancePeriod", "recordId", "specialEarningBalance", "earningCode", "earningCodeEn", "earningCodeFr", "hoursYearToDate", "hoursQuarterToDate", "hoursMonthToDate", "grossEarningYearToDate", "grossEarningQuarterToDate", "grossEarningMonthToDate", "subjectCIT", "addToGross"}, {"earningBalances.company", "earningBalances.balanceId", "earningBalances.balanceYear", "earningBalances.wageLossReplacementPlan", "earningBalances.province", "earningBalances.balanceQuarter", "earningBalances.balancePeriod", "earningBalances.recordId", "earningBalances.specialEarningBalance", "earningBalances.earningCode", "earningBalances.earningCodeEn", "earningBalances.earningCodeFr", "earningBalances.hoursYearToDate", "earningBalances.hoursQuarterToDate", "earningBalances.hoursMonthToDate", "earningBalances.grossEarningYearToDate", "earningBalances.grossEarningQuarterToDate", "earningBalances.grossEarningMonthToDate", "earningBalances.subjectCIT", "earningBalances.addToGross"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded earningBalances1",{{"earningBalances.balanceYear", Int64.Type}, {"earningBalances.hoursYearToDate", type number}, {"earningBalances.hoursQuarterToDate", type number}, {"earningBalances.hoursMonthToDate", type number}, {"earningBalances.grossEarningYearToDate", Currency.Type}, {"earningBalances.grossEarningQuarterToDate", Currency.Type}, {"earningBalances.grossEarningMonthToDate", Currency.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

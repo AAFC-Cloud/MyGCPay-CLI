@@ -1,0 +1,73 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["AllRtn","SinglePaycheque","Fact_EarningBalances","Fact_TaxBalances","Fact_DeductionBalances","Fact_PaychequeEarnings","Fact_PaychequeOtherEarnings","Fact_PaychequeTaxes","Fact_PaychequeDeductions","PaychequesJsonFilePath"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table AllRtn
+ref table DateTableTemplate_5cf57533-7898-4168-8bbf-f97df0a76898
+ref table SinglePaycheque
+ref table LocalDateTable_b1b89e78-4f78-4329-8d1c-1e48f55d2ed0
+ref table LocalDateTable_6f548c73-9f3d-420f-96ed-72460ba96d0c
+ref table LocalDateTable_09764160-78c8-4322-b989-54954aac9387
+ref table LocalDateTable_9b6b81fc-88a7-4590-b7d5-caeb88ba8810
+ref table Fact_EarningBalances
+ref table LocalDateTable_f24b1f2c-5410-477b-978e-641575e5d132
+ref table LocalDateTable_220c6efd-7cb3-4756-b36f-e6aecae29408
+ref table LocalDateTable_493b4405-c4ac-41f0-bedc-05ea8b79a6bb
+ref table LocalDateTable_bef0aa73-63b4-4a4d-8e24-620afee9f091
+ref table Fact_TaxBalances
+ref table LocalDateTable_bc836f01-c6ac-419f-af30-c2d756c2dab0
+ref table LocalDateTable_75de2321-cce7-409a-b765-44fa15f27750
+ref table LocalDateTable_18ce8332-a6da-4616-b4e0-e711a5bdf1e2
+ref table LocalDateTable_102bef7f-6cb3-460f-8490-f8bc02cce494
+ref table Fact_DeductionBalances
+ref table LocalDateTable_abc5b8b3-4b89-4cec-9e71-2aa6cc836cfd
+ref table LocalDateTable_e8e77654-a3df-475d-ab4c-b762b199e1f3
+ref table LocalDateTable_0ba6fc3e-b160-46d8-af72-eb4c5915217a
+ref table LocalDateTable_acdb111c-d180-4e0e-8dd3-6ffbcf524690
+ref table Fact_PaychequeEarnings
+ref table LocalDateTable_f8cca9ae-33a5-4b34-888e-600a2e873195
+ref table LocalDateTable_a7b2ce95-26ae-45c5-9880-f63acf516e30
+ref table LocalDateTable_dd654a89-1a86-4635-9f26-6555744c1455
+ref table LocalDateTable_e74bee28-ceeb-4e7e-b11e-8b3ee7397a8b
+ref table LocalDateTable_dba6c52a-2510-4691-8f70-efc8b6bffd7f
+ref table LocalDateTable_a12c87c6-8618-43ca-8223-e4b0b8a60172
+ref table LocalDateTable_c09cabac-1b88-4ae8-b9ab-5d4fbbefdf5a
+ref table LocalDateTable_1aa5a55f-7f71-4ddc-94ff-c171503cf374
+ref table LocalDateTable_947a49fc-a8fd-4381-8c95-93d1c6f889cf
+ref table LocalDateTable_6e2c4e3d-6d14-4743-bd0a-0940f81fdfea
+ref table Fact_PaychequeOtherEarnings
+ref table LocalDateTable_35c44d7e-8885-4bb1-bb13-1078a3429b4d
+ref table LocalDateTable_8dd55724-c43a-4642-9e00-1514ae0605f7
+ref table LocalDateTable_5281fabc-c8c4-4bf2-a237-ac6e1109dc87
+ref table LocalDateTable_c85c62f5-a1c7-4eb6-976b-0fe8661324ac
+ref table LocalDateTable_1cd730ff-64fe-4bde-bf58-e0273c48df18
+ref table LocalDateTable_eb03ca2d-984f-4662-834e-3837bc53687e
+ref table LocalDateTable_f4a3b503-f145-49fd-8a53-832f4ac1727f
+ref table LocalDateTable_7e622515-0738-40ed-a03f-b19978490129
+ref table LocalDateTable_12c637a5-0b1b-47c0-a408-3a43a7f9d782
+ref table LocalDateTable_ae655ee2-1329-4706-a731-b67506f5c7e6
+ref table Fact_PaychequeTaxes
+ref table LocalDateTable_d70dcdeb-b5b3-4444-98e0-09b47248f6d2
+ref table LocalDateTable_bc99c1cf-abd9-4211-9299-755ee4e4ee48
+ref table LocalDateTable_532b5b9f-a69d-4d01-8f12-5476c0a589e3
+ref table LocalDateTable_ea9069b2-febf-418e-bd19-0e0d3d4f139b
+ref table LocalDateTable_1e993342-8413-4bcf-bacf-0d25d9b7357b
+ref table Fact_PaychequeDeductions
+ref table LocalDateTable_b325a2ff-b23e-4076-80a7-70c39ca88cc6
+ref table LocalDateTable_55c4f7a6-7327-4e83-be6f-be3a15b6daf9
+ref table LocalDateTable_e5797ffa-6e9e-457e-b1ca-c76e3f435f4d
+ref table LocalDateTable_c6126fda-5681-4803-9de1-195b6f2d2490
+ref table LocalDateTable_eeb4559d-3e52-4f72-b510-9ab28f1a4ae4
+
+ref cultureInfo en-US
+
