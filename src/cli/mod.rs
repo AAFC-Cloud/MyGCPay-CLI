@@ -3,6 +3,7 @@ pub mod cookie;
 mod global_args;
 pub mod home;
 pub mod paycheque;
+pub mod calendar;
 
 use arbitrary::Arbitrary;
 use clap::Parser;
@@ -54,6 +55,8 @@ pub enum Command {
     Cache(cache::CacheArgs),
     /// Home-related commands
     Home(home::HomeArgs),
+    /// Calendar-related commands
+    Calendar(calendar::CalendarArgs),
 }
 
 impl Command {
@@ -66,6 +69,7 @@ impl Command {
             Command::Paycheque(args) => args.invoke().await,
             Command::Cache(args) => args.invoke().await,
             Command::Home(args) => args.invoke().await,
+            Command::Calendar(args) => args.invoke().await,
         }
     }
 }
@@ -89,6 +93,10 @@ impl ToArgs for Command {
             Command::Home(home_args) => {
                 args.push("home".into());
                 args.extend(home_args.to_args());
+            }
+            Command::Calendar(calendar_args) => {
+                args.push("calendar".into());
+                args.extend(calendar_args.to_args());
             }
         }
         args

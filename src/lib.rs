@@ -6,6 +6,7 @@ pub mod logging;
 pub mod net;
 pub mod paths;
 pub mod paycheque;
+pub mod calendar;
 
 use crate::cli::Cli;
 use clap::CommandFactory;
