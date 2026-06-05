@@ -34,7 +34,7 @@ impl CalendarShowArgs {
         let output: Vec<DateEntry> = dates
             .into_iter()
             .map(|d| {
-                let mut attrs: Vec<String> = PIPSC_CALENDAR_DAY_ANNOTATIONS
+                let attrs: Vec<String> = PIPSC_CALENDAR_DAY_ANNOTATIONS
                     .get(&d)
                     .map(|set| {
                         let mut v: Vec<String> = set
